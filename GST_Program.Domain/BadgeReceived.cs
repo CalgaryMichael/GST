@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GST_Program.Domain {
-	class BadgeReceived {
+	public class BadgeReceived {
 		public String transactionNumber { get; set; }
 		public Badge badge { get; set; }
 		public String receiverID { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GST_Program.Domain {
-	class Person {
+	public class Person {
 		public String ID { get; set; }
 		public String type { get; set; }
 		public String name { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GST_Program.Domain.ViewModels {
-	class BadgeBank {
+	public class BadgeBank {
 		public List<Badge> badges { get; set; }
 		public int count { get; set; }
 	}
