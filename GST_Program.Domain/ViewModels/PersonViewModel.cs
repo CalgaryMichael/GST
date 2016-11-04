@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GST_Program.Domain.ViewModels {
-	class PersonViewModel {
+	public class PersonViewModel {
 		public List<Person> people { get; set; }
 		public int count { get; set; }
 	}
