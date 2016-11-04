@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GST_Program.Domain.ViewModels {
 	public class BadgeReceivedList {
 		public List<BadgeReceived> badges { get; set; }
-		public String ID { get; set; }
+		public string SearchTerm { get; set; }
 		public int count { get; set; }
 	}
 }

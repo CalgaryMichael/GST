@@ -1,0 +1,38 @@
+﻿@model GST_Program.Domain.ViewModels.BadgeReceivedList
+@{
+    ViewBag.Title = "BadgeHistorySearch";
+}
+
+<div class="row">
+    <div class="col-md-12" id="resultSet">
+        @if (Model != null) {
+            <table>
+                <tr>
+                    <th>Transaction</th>
+                    <th>Badge Name</th>
+                    <th>Giver</th>
+                    <th>Receiver</th>
+                    <th></th>
+                </tr>
+                @foreach (var b in Model.badges) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelb => b.Transaction_Num)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelb => b.Badge_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelb => b.ID_Giver)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelb => b.Student_ID)
+                        </td>
+                    </tr>
+}
+            </table>
+        } else {
+            <h3 style="color:#cfcfcf;text-align:center;">No Results for search term <b>"@Model.SearchTerm"</b>, try again.</h3>
+        }
+    </div>
+</div>

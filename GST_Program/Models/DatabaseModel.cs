@@ -32,7 +32,7 @@ namespace GST_Program.Models {
 
 
 		// Populate List<BadgeReceived> with rows in the DB equal to Giver ID
-		public List<BadgeReceived> ReadAllBadgeReceivedByGiver(int ID) {
+		public List<BadgeReceived> ReadAllBadgeReceivedByGiver(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeHistory WHERE ID_Giver = @ID", new { ID }).ToList();
 			}
@@ -40,7 +40,7 @@ namespace GST_Program.Models {
 
 
 		// Populate List<BadgeReceived> with rows in the DB equal to Receiver ID
-		public List<BadgeReceived> ReadAllBadgeReceivedByReceiver(int ID) {
+		public List<BadgeReceived> ReadAllBadgeReceivedByReceiver(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeHistory WHERE Student_ID = @ID", new { ID }).ToList();
 			}
@@ -48,7 +48,7 @@ namespace GST_Program.Models {
 
 
 		// Populate List<BadgeReceived> with rows in the DB equal to Badge ID
-		public List<BadgeReceived> ReadAllBadgeReceivedByBadge(int ID) {
+		public List<BadgeReceived> ReadAllBadgeReceivedByBadge(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeHistory WHERE Badge_ID = @ID", new { ID }).ToList();
 			}
@@ -60,7 +60,7 @@ namespace GST_Program.Models {
 		// ***********************
 
 		// Retrieve Person to edit
-		public Person ReadSinglePerson(int ID) {
+		public Person ReadSinglePerson(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<Person>("Select * From person WHERE person_ID = @Person_ID", new { ID }).SingleOrDefault();
 			}
@@ -68,7 +68,7 @@ namespace GST_Program.Models {
 
 
 		// Retrieve Bdage to edit
-		public Badge ReadSingleBadge(int ID) {
+		public Badge ReadSingleBadge(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<Badge>("Select * From BadgeBank WHERE Badge_ID = @ID", new { ID }).SingleOrDefault();
 			}
@@ -76,7 +76,7 @@ namespace GST_Program.Models {
 
 
 		// Retrieve BadgeReceived to edit
-		public BadgeReceived ReadSingleBadgeReceived(int ID) {
+		public BadgeReceived ReadSingleBadgeReceived(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeBank WHERE Transation_Num = @ID", new { ID }).SingleOrDefault();
 			}

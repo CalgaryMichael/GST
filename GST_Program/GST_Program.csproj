@@ -114,7 +114,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GST\font-awesome\css\font-awesome.min.css" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\BadgeHistoryModule.js" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -129,6 +132,12 @@
     <Content Include="Views\Admin\BadgeHistory.cshtml" />
     <Content Include="Views\Tree\GiveBadge.cshtml" />
     <Content Include="Views\Tree\GridView.cshtml" />
+    <Content Include="Views\Admin\BadgeHistorySearch.cshtml" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="GST\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,6 +183,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="GST\bootstrap\" />
+    <Folder Include="GST\jquery\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\..\..\_Git\GST\GST_Program.Domain\GST_Program.Domain.csproj">

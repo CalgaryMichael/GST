@@ -39,21 +39,28 @@ namespace GST_Program.Controllers {
 		// or what badges that Giver y has given, or what badges
 		// Student z has received).
 
-		// GET: Admin/BadgeHistoryGiver
+	
+		// GET: Admin/BadgeHistory
+		public ActionResult BadgeHistory() {
+			return View();
+		}
+		
+		// POST: Admin/BadgeHistoryGiver
 		[HttpPost]
-		public ActionResult BadgeHistoryGiver(int ID) {
+		public ActionResult BadgeHistoryGiver(string ID) {
 			DatabaseModel file = new DatabaseModel();
 			var result = new BadgeReceivedList();
 			result.badges = file.ReadAllBadgeReceivedByGiver(ID);
+			result.SearchTerm = ID;
 			result.count = result.badges.Count;
 
 			return View("BadgeHistory", result);
 		}
 
 
-		// GET: Admin/BadgeHistoryReceiver
+		// POST: Admin/BadgeHistoryReceiver
 		[HttpPost]
-		public ActionResult BadgeHistoryReceiver(int ID) {
+		public ActionResult BadgeHistoryReceiver(string ID) {
 			DatabaseModel file = new DatabaseModel();
 			var result = new BadgeReceivedList();
 			result.badges = file.ReadAllBadgeReceivedByReceiver(ID);
@@ -63,9 +70,9 @@ namespace GST_Program.Controllers {
 		}
 
 
-		// GET: Admin/BadgeHistoryBadge
+		// POST: Admin/BadgeHistoryBadge
 		[HttpPost]
-		public ActionResult BadgeHistoryBadge(int ID) {
+		public ActionResult BadgeHistoryBadge(string ID) {
 			DatabaseModel file = new DatabaseModel();
 			var result = new BadgeReceivedList();
 			result.badges = file.ReadAllBadgeReceivedByBadge(ID);
