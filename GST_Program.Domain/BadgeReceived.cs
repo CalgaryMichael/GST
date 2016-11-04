@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GST_Program.Domain {
 	public class BadgeReceived {
-		public String transactionNumber { get; set; }
+		public string transactionNumber { get; set; }
 		public Badge badge { get; set; }
-		public String receiverID { get; set; }
-		public String giverID { get; set; }
+		public string receiverID { get; set; }
+		public string giverID { get; set; }
 		public DateTime timeStamp { get; set; }
-		public String comment { get; set; }
+		public string comment { get; set; }
 	}
 }

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace GST_Program.Domain {
 	public class Person {
-		public String ID { get; set; }
-		public String type { get; set; }
-		public String name { get; set; }
-		public String email { get; set; }
+		public string ID { get; set; }
+		public string type { get; set; }
+		public string name { get; set; }
+		public string email { get; set; }
+		public string adminStatus { get; set; }
 	}
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GST_Program.Domain {
 	public class Badge {
-		public String ID { get; set; }
-		public String lvl { get; set; }
-		public String giveType { get; set; }
-		public String activeDate { get; set; }
-		public String expireDate { get; set; }
+		public string ID { get; set; }
+		public string lvl { get; set; }
+		public string giveType { get; set; }
+		public string activeDate { get; set; }
+		public string expireDate { get; set; }
 	}
 }
