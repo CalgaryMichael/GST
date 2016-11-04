@@ -42,3 +42,47 @@ C:\users\calgary.michael\documents\visual studio 2015\Projects\GST_Program\GST_P
 C:\users\calgary.michael\documents\visual studio 2015\Projects\GST_Program\GST_Program\bin\GST_Program.Domain.dll
 C:\users\calgary.michael\documents\visual studio 2015\Projects\GST_Program\GST_Program\bin\GST_Program.Domain.pdb
 C:\users\calgary.michael\documents\visual studio 2015\Projects\GST_Program\GST_Program\bin\Dapper.xml
+C:\_Git\GST\GST_Program\obj\Debug\GST_Program.csprojResolveAssemblyReference.cache
+C:\_Git\GST\GST_Program\obj\Debug\GST_Program.dll
+C:\_Git\GST\GST_Program\obj\Debug\GST_Program.pdb
+C:\_Git\GST\GST_Program\bin\roslyn\csc.exe
+C:\_Git\GST\GST_Program\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\_Git\GST\GST_Program\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\_Git\GST\GST_Program\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\_Git\GST\GST_Program\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\_Git\GST\GST_Program\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\_Git\GST\GST_Program\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\_Git\GST\GST_Program\bin\roslyn\System.Collections.Immutable.dll
+C:\_Git\GST\GST_Program\bin\roslyn\System.Reflection.Metadata.dll
+C:\_Git\GST\GST_Program\bin\roslyn\vbc.exe
+C:\_Git\GST\GST_Program\bin\roslyn\VBCSCompiler.exe
+C:\_Git\GST\GST_Program\bin\roslyn\VBCSCompiler.exe.config
+C:\_Git\GST\GST_Program\bin\GST_Program.dll.config
+C:\_Git\GST\GST_Program\bin\GST_Program.dll
+C:\_Git\GST\GST_Program\bin\GST_Program.pdb
+C:\_Git\GST\GST_Program\bin\Antlr3.Runtime.dll
+C:\_Git\GST\GST_Program\bin\Dapper.dll
+C:\_Git\GST\GST_Program\bin\GST_Program.Domain.dll
+C:\_Git\GST\GST_Program\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\_Git\GST\GST_Program\bin\Microsoft.Web.Infrastructure.dll
+C:\_Git\GST\GST_Program\bin\Newtonsoft.Json.dll
+C:\_Git\GST\GST_Program\bin\System.Web.Helpers.dll
+C:\_Git\GST\GST_Program\bin\System.Web.Mvc.dll
+C:\_Git\GST\GST_Program\bin\System.Web.Optimization.dll
+C:\_Git\GST\GST_Program\bin\System.Web.Razor.dll
+C:\_Git\GST\GST_Program\bin\System.Web.WebPages.Deployment.dll
+C:\_Git\GST\GST_Program\bin\System.Web.WebPages.dll
+C:\_Git\GST\GST_Program\bin\System.Web.WebPages.Razor.dll
+C:\_Git\GST\GST_Program\bin\WebGrease.dll
+C:\_Git\GST\GST_Program\bin\GST_Program.Domain.pdb
+C:\_Git\GST\GST_Program\bin\Antlr3.Runtime.pdb
+C:\_Git\GST\GST_Program\bin\Dapper.xml
+C:\_Git\GST\GST_Program\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\_Git\GST\GST_Program\bin\Newtonsoft.Json.xml
+C:\_Git\GST\GST_Program\bin\System.Web.Helpers.xml
+C:\_Git\GST\GST_Program\bin\System.Web.Mvc.xml
+C:\_Git\GST\GST_Program\bin\System.Web.Optimization.xml
+C:\_Git\GST\GST_Program\bin\System.Web.Razor.xml
+C:\_Git\GST\GST_Program\bin\System.Web.WebPages.xml
+C:\_Git\GST\GST_Program\bin\System.Web.WebPages.Deployment.xml
+C:\_Git\GST\GST_Program\bin\System.Web.WebPages.Razor.xml

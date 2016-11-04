@@ -15,11 +15,8 @@ namespace GST_Program.Controllers
     {
         // GET: Home
         public ActionResult Index() {
-			DatabaseModel file = new DatabaseModel();
-			PersonViewModel pvm = new PersonViewModel();
-			pvm.people = file.ReadAllPerson();
-
-			return View(pvm);
+			
+			return View();
         }
     }
 }

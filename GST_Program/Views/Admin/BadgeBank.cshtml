@@ -1,7 +1,22 @@
-﻿
+﻿@model GST_Program.Domain.ViewModels.BadgeBank
 @{
-    ViewBag.Title = "BadgeBank";
+    ViewBag.Title = "Index";
 }
-
-<h2>BadgeBank</h2>
-
+<h2>Index</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    @foreach (var b in Model.badges) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelb => b.Badge_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelb => b.Badge_Name)
+            </td>
+        </tr>
+    }
+</table>
