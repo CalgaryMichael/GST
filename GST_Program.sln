@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST_Program", "..\..\users\calgary.michael\documents\visual studio 2015\Projects\GST_Program\GST_Program\GST_Program.csproj", "{F65C002F-1FC7-45BA-9B06-2C237A0C74C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST_Program", "GST_Program\GST_Program.csproj", "{F65C002F-1FC7-45BA-9B06-2C237A0C74C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST_Program.Domain", "GST_Program.Domain\GST_Program.Domain.csproj", "{2E3565FE-7351-4B97-BDA3-BD40AC03B6E3}"
 EndProject
