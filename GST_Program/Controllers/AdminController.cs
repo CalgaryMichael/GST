@@ -12,13 +12,19 @@ namespace GST_Program.Controllers {
 
         // GET: Admin
         public ActionResult Index() {
+			return View();
+        }
+
+
+		// GET: Admin/PersonType
+		public ActionResult PersonType(string type) {
 			DatabaseModel file = new DatabaseModel();
 			PersonViewModel pvm = new PersonViewModel();
-			pvm.people = file.ReadAllPerson();
+			pvm.people = file.ReadAllPersonByType(type);
 			pvm.count = pvm.people.Count;
 
-			return View(pvm);
-        }
+			return View("PersonSearch", pvm);
+		}
 
 
 		// GET: Admin/BadgeBank

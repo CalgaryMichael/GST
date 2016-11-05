@@ -12,7 +12,7 @@ namespace GST_Program.Models {
 	public class DatabaseModel {
 
 		// ***********************
-		// Read All
+		// Read Multiple
 		// ***********************
 
 		// Populate List<Person> with rows in Db
@@ -23,7 +23,15 @@ namespace GST_Program.Models {
 		}
 
 
-		// Populate List<Badge> with rows in the DB
+		// Populate List<Person> with rows in Db based off of Person_Type
+		public List<Person> ReadAllPersonByType(string type) {
+			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
+				return db.Query<Person>("Select * From person WHERE Person_Type = @type", new { type }).ToList();
+			}
+		}
+
+
+		// Populate List<Badge> with rows in the Db
 		public List<Badge> ReadAllBadge() {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<Badge>("Select * From BadgeBank").ToList();
@@ -31,7 +39,7 @@ namespace GST_Program.Models {
 		}
 
 
-		// Populate List<BadgeReceived> with rows in the DB equal to Giver ID
+		// Populate List<BadgeReceived> with rows in the Db equal to Giver ID
 		public List<BadgeReceived> ReadAllBadgeReceivedByGiver(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeHistory WHERE ID_Giver = @ID", new { ID }).ToList();
@@ -39,7 +47,7 @@ namespace GST_Program.Models {
 		}
 
 
-		// Populate List<BadgeReceived> with rows in the DB equal to Receiver ID
+		// Populate List<BadgeReceived> with rows in the Db equal to Receiver ID
 		public List<BadgeReceived> ReadAllBadgeReceivedByReceiver(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeHistory WHERE Student_ID = @ID", new { ID }).ToList();
@@ -47,7 +55,7 @@ namespace GST_Program.Models {
 		}
 
 
-		// Populate List<BadgeReceived> with rows in the DB equal to Badge ID
+		// Populate List<BadgeReceived> with rows in the Db equal to Badge ID
 		public List<BadgeReceived> ReadAllBadgeReceivedByBadge(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<BadgeReceived>("Select * From BadgeHistory WHERE Badge_ID = @ID", new { ID }).ToList();
@@ -67,7 +75,7 @@ namespace GST_Program.Models {
 		}
 
 
-		// Retrieve Bdage to edit
+		// Retrieve Badge to edit
 		public Badge ReadSingleBadge(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
 				return db.Query<Badge>("Select * From BadgeBank WHERE Badge_ID = @ID", new { ID }).SingleOrDefault();
