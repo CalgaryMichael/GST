@@ -54,7 +54,7 @@ namespace GST_Program.Controllers {
 			result.SearchTerm = ID;
 			result.count = result.badges.Count;
 
-			return View("BadgeHistory", result);
+			return View("BadgeHistorySearch", result);
 		}
 
 
@@ -66,7 +66,7 @@ namespace GST_Program.Controllers {
 			result.badges = file.ReadAllBadgeReceivedByReceiver(ID);
 			result.count = result.badges.Count;
 
-			return View("BadgeHistory", result);
+			return View("BadgeHistorySearch", result);
 		}
 
 
@@ -78,7 +78,7 @@ namespace GST_Program.Controllers {
 			result.badges = file.ReadAllBadgeReceivedByBadge(ID);
 			result.count = result.badges.Count;
 
-			return View("BadgeHistory", result);
+			return View("BadgeHistorySearch", result);
 		}
 	}
 }

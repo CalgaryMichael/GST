@@ -16,3 +16,69 @@ textarea {
     max-width: 280px;
 }
 
+#spinner{
+    display:none;
+}
+
+#spinner .fa-spinner{
+    margin:10px 10px;
+    color:#63717f;
+}
+
+.container-1{
+    margin:0 auto !important;
+}
+
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#txtSearch{
+  width: 300px;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #000;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container-1 input#txtSearch::-webkit-input-placeholder {
+   color: #cfcfcf;
+}
+ 
+.container-1 input#txtSearch:-moz-placeholder { /* Firefox 18- */
+   color: #cfcfcf;  
+}
+ 
+.container-1 input#txtSearch::-moz-placeholder {  /* Firefox 19+ */
+   color: #cfcfcf;  
+}
+ 
+.container-1 input#txtSearch:-ms-input-placeholder {  
+   color: #cfcfcf;  
+}
+
+.container-1 .icon{
+  position: absolute;
+  top: 30%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+.icon{
+    cursor:pointer;
+}
+
+.icon:hover{
+    color:#cfcfcf;
+}
