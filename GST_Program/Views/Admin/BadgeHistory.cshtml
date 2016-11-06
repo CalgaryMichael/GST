@@ -1,7 +1,57 @@
 ﻿
 @{
     ViewBag.Title = "BadgeHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>BadgeHistory</h2>
+@section additionalCSS
+{
 
+}
+
+<h2>Badge History</h2>
+
+<div class="container">
+    <div class="box">
+        <div class="row">
+            <div class="container-1">
+                <span class="icon" id="searchIcon"><i class="fa fa-search"></i></span>
+                <input type="search" id="txtSearch" placeholder="Search..." />
+            </div>
+        </div>
+        <div class="row">
+            <div class="container-1">
+                Search by:    
+                <input type="radio" id="Giver" name="searchType" value="Giver" checked="checked" /> <label for="Giver">Giver</label>
+                <input type="radio" id="Receiver" name="searchType" value="Receiver" /> <label for="Receiver">Receiver</label>
+                <input type="radio" id="Badge" name="searchType" value="Badge" /> <label for="Badge">Badge</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container-1">
+                <div id="spinner">
+                    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div id="results"></div>
+</div>
+<hr />
+
+@section scriptsIncludes
+{
+    <script src="~/Scripts/Admin/BadgeHistoryModule.js?Build=@Guid.NewGuid().ToString()"></script>
+}
+
+@section inlineScript
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.BadgeHistoryModule.init($('#txtSearch').val());
+        });
+    </script>
+}

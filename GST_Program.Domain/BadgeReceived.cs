@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GST_Program.Domain {
 	public class BadgeReceived {
-		public int Transaction_Number { get; set; }
+		public int Transaction_Num { get; set; }
 		public string Badge_ID { get; set; }
 		public string ID_Giver { get; set; }
 		public string Student_ID { get; set; }

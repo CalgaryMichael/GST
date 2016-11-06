@@ -114,7 +114,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GST\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="GST\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="GST\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="GST\bootstrap\css\bootstrap.css" />
+    <Content Include="GST\bootstrap\css\bootstrap.min.css" />
+    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GST\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="GST\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="GST\bootstrap\js\bootstrap.js" />
+    <Content Include="GST\bootstrap\js\bootstrap.min.js" />
+    <Content Include="GST\font-awesome\css\font-awesome.min.css" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="GST\jquery\js\jquery-1.11.2.min.js" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\Admin\BadgeBankModule.js" />
+    <Content Include="Scripts\Admin\BadgeHistoryModule.js" />
+    <Content Include="Scripts\Admin\IndexModule.js" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -129,6 +145,18 @@
     <Content Include="Views\Admin\BadgeHistory.cshtml" />
     <Content Include="Views\Tree\GiveBadge.cshtml" />
     <Content Include="Views\Tree\GridView.cshtml" />
+    <Content Include="Views\Admin\BadgeHistorySearch.cshtml" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="GST\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Admin\PersonSearch.cshtml" />
+    <Content Include="Views\Admin\BadgeBankSearch.cshtml" />
+    <Content Include="Views\Admin\BadgeDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
