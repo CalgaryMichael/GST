@@ -38,6 +38,13 @@ namespace GST_Program.Models {
 			}
 		}
 
+		// Populate List<Badge> with rows in the Db
+		public List<Badge> ReadAllBadgeByType(string type) {
+			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
+				return db.Query<Badge>("Select * From BadgeBank WHERE Badge_Give_Type = @type", new { type }).ToList();
+			}
+		}
+
 
 		// Populate List<BadgeReceived> with rows in the Db equal to Giver ID
 		public List<BadgeReceived> ReadAllBadgeReceivedByGiver(string ID) {

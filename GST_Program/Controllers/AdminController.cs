@@ -30,11 +30,38 @@ namespace GST_Program.Controllers {
 		// GET: Admin/BadgeBank
 		public ActionResult BadgeBank() {
 			DatabaseModel file = new DatabaseModel();
-			BadgeBank brl = new BadgeBank();
-			brl.badges = file.ReadAllBadge();
-			brl.count = brl.badges.Count;
+			BadgeBank bb = new BadgeBank();
+			bb.badges = file.ReadAllBadge();
+			bb.count = bb.badges.Count;
 
-			return View(brl);
+			return View(bb);
+		}
+
+
+		// GET: Admin/BadgeBankType
+		public ActionResult BadgeBankType(string type) {
+			DatabaseModel file = new DatabaseModel();
+			BadgeBank bb = new BadgeBank();
+
+			if (type == "All") {
+				bb.badges = file.ReadAllBadge();
+				bb.count = bb.badges.Count;
+			} else {
+				bb.badges = file.ReadAllBadgeByType(type);
+				bb.count = bb.badges.Count;
+			}
+
+			return View("BadgeBankSearch", bb);
+		}
+
+
+		// GET: Admin/BadgeDetail
+		public ActionResult BadgeDetail(string id) {
+			DatabaseModel file = new DatabaseModel();
+			Badge b = new Badge();
+			b = file.ReadSingleBadge(id);
+
+			return View(b);
 		}
 
 

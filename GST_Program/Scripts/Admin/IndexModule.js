@@ -1,8 +1,4 @@
 ﻿$(document).ready(function () {
-    $('#searchIcon').click(function () {
-        submitForm();
-    });
-
     $('#Student').click(function () {
         getStudent();
     });
@@ -11,8 +7,8 @@
         getFaculty();
     });
 
-    $('#Professor').click(function () {
-        getProfessor();
+    $('#Staff').click(function () {
+        getStaff();
     });
 });
 
@@ -61,12 +57,12 @@ window.IndexModule = (function () {
         });
     };
 
-    getProfessor = function () {
+    getStaff = function () {
         $.ajax({
             url: '/Admin/PersonType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Professor" },
+            data: { type: "Staff" },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
@@ -90,8 +86,8 @@ window.IndexModule = (function () {
         getFaculty: function () {
             getFaculty();
         },
-        getProfessor: function () {
-            getProfessor();
+        getStaff: function () {
+            getStaff();
         },
     };
 })(jQuery);

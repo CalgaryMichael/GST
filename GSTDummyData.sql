@@ -1,13 +1,13 @@
 INSERT INTO PERSON VALUES('10010','Student','Ramas Alfred','abc@example.com','0');
-INSERT INTO PERSON VALUES('10011','Faculty','Dunne Leona','def@example.com','1');
-INSERT INTO PERSON VALUES('10012','Professor','Smith Kathy','ghi@example.com','1');
+INSERT INTO PERSON VALUES('10011','Staff','Dunne Leona','def@example.com','1');
+INSERT INTO PERSON VALUES('10012','Faculty','Smith Kathy','ghi@example.com','1');
 INSERT INTO PERSON VALUES('10013','Student','Olowski Paul','jkl@example.com','0');
-INSERT INTO PERSON VALUES('10014','Faculty','Orlando Myron','mno@example.com','1');
+INSERT INTO PERSON VALUES('10014','Staff','Orlando Myron','mno@example.com','1');
 INSERT INTO PERSON VALUES('10015','Student','Brian Amy','pqr@example.com','0');
 INSERT INTO PERSON VALUES('10016','Student','Brown James','stu@example.com','0');
 INSERT INTO PERSON VALUES('10017','Student','Williams George','vwx@example.com','0');
 INSERT INTO PERSON VALUES('10018','Student','Farriss Anne','yz@example.com','0');
-INSERT INTO PERSON VALUES('10019','Professor','Smith Olette','123@example.com','1');
+INSERT INTO PERSON VALUES('10019','Faculty','Smith Olette','123@example.com','1');
 
 
 INSERT INTO BADGEBANK VALUES('101','Thumbs Up','Gave meaningful comment(s) during class time','','Student-Peer','7-25-16','','','http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/student-peer-badges/animated-gifs/101%20Thumbs%20Up.gif');

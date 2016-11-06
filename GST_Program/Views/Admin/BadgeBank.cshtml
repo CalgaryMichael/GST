@@ -1,22 +1,46 @@
 ﻿@model GST_Program.Domain.ViewModels.BadgeBank
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Badge Bank";
 }
-<h2>Index</h2>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th></th>
-    </tr>
-    @foreach (var b in Model.badges) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelb => b.Badge_ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelb => b.Badge_Name)
-            </td>
-        </tr>
-    }
-</table>
+
+<h2>Badge Bank</h2>
+
+<div class="container">
+    <div class="row">
+        <input class="btn btn-default" type="submit" id="All" value="All Badges">
+        <input class="btn btn-default" type="submit" id="St-Pe" value="Student-Peer">
+        <input class="btn btn-default" type="submit" id="St-Se" value="Student-Self">
+        <input class="btn btn-default" type="submit" id="Staff-St" value="Staff-Student">
+        <input class="btn btn-default" type="submit" id="Fa-St" value="Faculty-Student">
+    </div>
+    <div class="row">
+        <div class="container-1">
+            <div id="spinner">
+                <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div id="results"></div>
+    </div>
+</div>
+
+
+
+@section scriptsIncludes
+{
+    <script src="~/Scripts/Admin/BadgeBankModule.js?Build=@Guid.NewGuid().ToString()"></script>
+}
+
+@section inlineScript
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            getAll();
+        });
+    </script>
+}

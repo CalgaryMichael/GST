@@ -13,7 +13,7 @@ namespace GST_Program.Domain {
 		public string Badge_Give_Type { get; set; }		// BadgeBank.Badge_Give_Type
 		public string Date_Activated { get; set; }		// BadgeBank.Date_Activated
 		public string Date_Retired { get; set; }		// BadgeBank.DateRetired
-		public string Badge_Notes { get; set; }			// BadgeBank.Notes
+		public string Notes { get; set; }			// BadgeBank.Notes
 		public string Image_Address { get; set; }		// BadgeBank.Image_Address
 	}
 }
