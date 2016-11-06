@@ -24,44 +24,63 @@
             @Html.DisplayFor(m => m.Badge_Summary) <br />
         </td>
     </tr>
+
+    @if (Model.Badge_Category != null) {
     <tr>
         <td><b>Category</b></td>
         <td>
             @Html.DisplayFor(m => m.Badge_Category) <br />
         </td>
     </tr>
+    }
+
+    @if (Model.Badge_Give_Type != null) {
     <tr>
         <td><b>Give Type</b></td>
         <td>
             @Html.DisplayFor(m => m.Badge_Give_Type) <br />
         </td>
     </tr>
+    }
+
+    @if (Model.Date_Activated != null) {
     <tr>
         <td><b>Date Actived</b></td>
         <td>
             @Html.DisplayFor(m => m.Date_Activated) <br />
         </td>
     </tr>
+    }
+
+    @if (Model.Date_Retired != null) {
     <tr>
         <td><b>Date Retired</b></td>
         <td>
             @Html.DisplayFor(m => m.Date_Retired) <br />
         </td>
     </tr>
+    }
+
+    @if (Model.Notes != null) {
     <tr>
         <td><b>Notes</b></td>
         <td>
             @Html.DisplayFor(m => m.Notes) <br />
         </td>
     </tr>
+    }
+
+    @if (Model.Image_Address != null) {
     <tr>
-        <td><b>Image Address</b></td>
+        <td><b>Image</b></td>
         <td>
-            @Html.DisplayFor(m => m.Image_Address) <br />
+            <img id="BadgeImage" src="@Model.Image_Address"/>
         </td>
     </tr>
+    }
+
     <tr>
         <td></td>
-        <td><input type="button" value="Back" onclick="window.location='/Admin/BadgeBank'" /></td>
+        <td><input class="btn btn-default" type="button" value="Back" onclick="window.location='/Admin/BadgeBank'" /></td>
     </tr>
 </table>

@@ -117,8 +117,6 @@
     <Content Include="GST\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="GST\bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="GST\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="GST\bootstrap\css\bootstrap.css" />
-    <Content Include="GST\bootstrap\css\bootstrap.min.css" />
     <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GST\bootstrap\img\glyphicons-halflings-white.png" />
     <Content Include="GST\bootstrap\img\glyphicons-halflings.png" />
@@ -126,7 +124,6 @@
     <Content Include="GST\bootstrap\js\bootstrap.min.js" />
     <Content Include="GST\font-awesome\css\font-awesome.min.css" />
     <Content Include="GST\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="GST\jquery\js\jquery-1.11.2.min.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\Admin\BadgeBankModule.js" />
     <Content Include="Scripts\Admin\BadgeHistoryModule.js" />
@@ -157,6 +154,8 @@
     <Content Include="Views\Admin\PersonSearch.cshtml" />
     <Content Include="Views\Admin\BadgeBankSearch.cshtml" />
     <Content Include="Views\Admin\BadgeDetail.cshtml" />
+    <Content Include="Views\Admin\BadgeEdit.cshtml" />
+    <Content Include="Views\Admin\BadgeDelete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

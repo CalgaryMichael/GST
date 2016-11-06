@@ -1,0 +1,84 @@
+﻿@model GST_Program.Domain.Badge
+@{
+    ViewBag.Title = "Badge Edit";
+}
+
+<h2>Badge Edit</h2>
+
+@using (Html.BeginForm()) {
+    <div class="form-group">
+        @Html.HiddenFor(model => model.Badge_ID)
+        <table class="table">
+            <tr>
+                <td>ID</td>
+                <td>
+                    @Html.DisplayFor(m => m.Badge_ID)
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    @Html.EditorFor(m => m.Badge_Name, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Name, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Summary</td>
+                <td>
+                    @Html.EditorFor(m => m.Badge_Summary, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Summary, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    @Html.EditorFor(m => m.Badge_Category, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Category, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Give Type</td>
+                <td>
+                    @Html.EditorFor(m => m.Badge_Give_Type, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Give_Type, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Date Activated</td>
+                <td>
+                    @Html.EditorFor(m => m.Date_Activated, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Date_Activated, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Date Retired</td>
+                <td>
+                    @Html.EditorFor(m => m.Date_Retired, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Date_Retired, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td>
+                    @Html.EditorFor(m => m.Notes, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Notes, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Image Address</td>
+                <td>
+                    @Html.EditorFor(m => m.Image_Address, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Image_Address, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn btn-default" type="submit" value="Save" />
+                    <input class="btn btn-default" type="button" value="Cancel" onclick="window.location='/Admin/BadgeBank/';" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+

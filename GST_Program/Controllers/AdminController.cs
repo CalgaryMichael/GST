@@ -65,6 +65,55 @@ namespace GST_Program.Controllers {
 		}
 
 
+		// GET: Admin/BadgeEdit
+		[HttpGet]
+		public ActionResult BadgeEdit(string id) {
+			DatabaseModel file = new DatabaseModel();
+			Badge b = new Badge();
+			b = file.ReadSingleBadge(id);
+
+			return View(b);
+		}
+
+
+		// POST: Admin/BadgeEdit
+		[HttpPost]
+		public ActionResult BadgeEdit(Badge b) {
+			DatabaseModel file = new DatabaseModel();
+
+			if (ModelState.IsValid) {
+				file.Update(b);
+				return RedirectToAction("BadgeBank");
+			}
+
+			return View(b);
+		}
+
+
+		// GET: /Admin/BadgeDelete
+		[HttpGet]
+		public ActionResult BadgeDelete(string id) {
+			DatabaseModel file = new DatabaseModel();
+			Badge b = file.ReadSingleBadge(id);
+
+			return View(b);
+		}
+
+
+		// GET: Admin/BadgeDelete
+		public ActionResult BadgeDelete(Badge b) {
+			DatabaseModel file = new DatabaseModel();
+
+			if (ModelState.IsValid) {
+				file.Delete(b);
+				return RedirectToAction("BadgeBank");
+			}
+
+			return View(b);
+		}
+		
+
+
 		// Okay, so here is the lowdown on the BadgeHistory pages:
 		// in a JQuery call, you will direct it to one of these
 		// view calls depending on what the Admin is searching for
@@ -72,7 +121,7 @@ namespace GST_Program.Controllers {
 		// or what badges that Giver y has given, or what badges
 		// Student z has received).
 
-	
+
 		// GET: Admin/BadgeHistory
 		public ActionResult BadgeHistory() {
 			return View();

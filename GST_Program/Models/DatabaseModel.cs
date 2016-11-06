@@ -145,7 +145,7 @@ namespace GST_Program.Models {
 		// Update row in Badge
 		public void Update(Badge b) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
-				string sqlQuery = "UPDATE BadgeBank SET Badge_ID = @Badge_ID, Badge_Name = @Badge_Name, Badge_Summary = @Badge_Summary, Badge_Category = @Badge_Category, Badge_Give_Type = @Badge_Give_Type, Date_Activated = @Date_Activated, Date_Retired = @Date_Retired, Notes = @Notes, Image_Address = @Image_Address)";
+				var sqlQuery = "UPDATE BadgeBank SET Badge_Name = @Badge_Name, Badge_Summary = @Badge_Summary, Badge_Category = @Badge_Category, Badge_Give_Type = @Badge_Give_Type, Date_Activated = @Date_Activated, Date_Retired = @Date_Retired, Notes = @Notes, Image_address = @Image_Address WHERE Badge_ID = @Badge_ID";
 				db.Execute(sqlQuery, b);
 			}
 		}
@@ -154,7 +154,7 @@ namespace GST_Program.Models {
 		// Update row in BadgeReceived
 		public void Update(BadgeReceived b) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
-				string sqlQuery = "UPDATE BadgeReceived SET Transaction_Num = @Transaction_Num, Badge_ID = @Badge_ID, ID_Giver = @ID_Giver, Student_ID = @Student_ID, Time_Stamp = @Time_Stamp, Comment = @Comment)";
+				string sqlQuery = "UPDATE BadgeReceived SET Transaction_Num = @Transaction_Num, Badge_ID = @Badge_ID, ID_Giver = @ID_Giver, Student_ID = @Student_ID, Time_Stamp = @Time_Stamp, Comment = @Comment WHERE Transaction_Num = @Transaction_Num";
 				db.Execute(sqlQuery, b);
 			}
 		}
