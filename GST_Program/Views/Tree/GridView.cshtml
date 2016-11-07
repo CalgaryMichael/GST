@@ -1,7 +1,60 @@
-﻿
+﻿@model List<GST_Program.Domain.BadgeReceived>
+
 @{
     ViewBag.Title = "GridView";
 }
 
 <h2>GridView</h2>
+<div class="grid" style="width:100%">
+    @for (int i = 0; i < Math.Ceiling((Model.Count()/7.0)); i++)
+    {
+        <div class="row">
+            @for (int j = 0; j < 7; j++)
+            {
+                <div class="col-sm-1">
+                    @if(j + i*7 < Model.Count())
+                    {
+                        <div>
+                            @Html.Raw(Model[j + i * 7].Badge_ID)
+                        </div>
+                        <div>
+                            @Html.Raw(Model[j + i * 7].ID_Giver)
+                        </div>
+                        <div>
+                            @if (Model[j + i * 7].badge != null)
+                            {
+                                <img id="BadgeImage" src="@Model[j+i*7].badge.Image_Address" />
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
 
+
+@*<table style="width:100%">
+    <tr>
+        <th>Badge</th>
+        <th>Sender</th>
+        <th>Image</th>
+    </tr>
+@foreach (var badge in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => badge.Badge_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => badge.ID_Giver)
+        </td>
+        <td>
+            @if (badge.badge != null)
+            {
+                <img id="BadgeImage" src="@badge.badge.Image_Address"/>
+            }
+        </td>
+    </tr>
+}
+</table>*@
