@@ -77,7 +77,7 @@ namespace GST_Program.Models {
 		// Retrieve Person to edit
 		public Person ReadSinglePerson(string ID) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
-				return db.Query<Person>("Select * From person WHERE person_ID = @Person_ID", new { ID }).SingleOrDefault();
+				return db.Query<Person>("Select * From person WHERE person_ID = @ID", new { ID }).SingleOrDefault();
 			}
 		}
 

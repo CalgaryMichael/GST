@@ -45,7 +45,7 @@
                       new SelectListItem{ Text = "Faculty-Student", Value = "Faculty-Student" },
                       new SelectListItem{ Text = "Staff-Student", Value = "Staff-Student" }
                     }, "")
-                    @Html.ValidationMessageFor(m => m.Badge_Give_Type, "", new { @class = "text-danger" })
+                    @Html.ValidationMessage("Badge_Give_Type", "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>

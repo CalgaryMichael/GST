@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using GST_Program.Domain;
 using GST_Program.Domain.ViewModels;
 using GST_Program.Models;
+using System.Dynamic;
 
 namespace GST_Program.Controllers {
     public class TreeController : Controller {
@@ -29,7 +30,31 @@ namespace GST_Program.Controllers {
 			BadgeBank bb = new BadgeBank();
 			bb.badges = file.ReadAllBadge();
 
-			return View(bb);
+			PersonViewModel pvm = new PersonViewModel();
+			pvm.people = file.ReadAllPerson();
+
+			ViewBag.Badges = bb;
+			ViewBag.People = pvm;
+
+			return View();
+		}
+
+
+		// POST: Tree/GiveBadge
+		[HttpPost]
+		public ActionResult GiveBadge(BadgeReceived b) {
+			DatabaseModel file = new DatabaseModel();
+			b.Time_Stamp = DateTime.Now;
+
+			Badge badge = file.ReadSingleBadge(b.Badge_ID);
+			Person giver = file.ReadSinglePerson(b.ID_Giver);
+
+			if (ModelState.IsValid) {
+				file.Create(b);
+				return RedirectToAction("GridView");
+			}
+
+			return View(b);
 		}
     }
 }
