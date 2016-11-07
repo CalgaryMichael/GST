@@ -1,0 +1,87 @@
+﻿@model GST_Program.Domain.Badge
+@{
+    ViewBag.Title = "Badge Create";
+}
+
+<h2>Badge Create</h2>
+
+@using (Html.BeginForm()) {
+    <div class="form-group">
+        <table class="table">
+            <tr>
+                <td>ID</td>
+                <td>
+                    @Html.Editor("Badge_ID") <br />
+                    @Html.ValidationMessage("Badge_ID", "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    @Html.Editor("Badge_Name", new { @class = "form-control" }) <br />
+                    @Html.ValidationMessage("Badge_Name", "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Summary</td>
+                <td>
+                    @Html.Editor("Badge_Summary", new { @class = "form-control" }) <br />
+                    @Html.ValidationMessage("Badge_Summary", "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    @Html.Editor("Badge_Category", new { @class = "form-control" }) <br />
+                </td>
+            </tr>
+            <tr>
+                <td>Give Type</td>
+                <td>
+                    @Html.DropDownList("Badge_Give_Type", new List<SelectListItem>
+                    {
+                      new SelectListItem{ Text = "Student-Peer", Value = "Student-Peer" },
+                      new SelectListItem{ Text = "Student-Self", Value = "Student-Self" },
+                      new SelectListItem{ Text = "Faculty-Student", Value = "Faculty-Student" },
+                      new SelectListItem{ Text = "Staff-Student", Value = "Staff-Student" }
+                    }, "")
+                    @Html.ValidationMessageFor(m => m.Badge_Give_Type, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Date Activated</td>
+                <td>
+                    @Html.Editor("Date_Activated", new { @class = "form-control" }) <br />
+                    @Html.ValidationMessage("Date_Activated", "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Date Retired</td>
+                <td>
+                    @Html.Editor("Date_Retired", new { @class = "form-control" }) <br />
+                </td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td>
+                    @Html.Editor("Notes", new { @class = "form-control" }) <br />
+                </td>
+            </tr>
+            <tr>
+                <td>Image Address</td>
+                <td>
+                    @Html.Editor("Image_Address", new { @class = "form-control" }) <br />
+                    @Html.ValidationMessage("Image_Address", "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn btn-default" type="submit" value="Save" />
+                    <input class="btn btn-default" type="button" value="Cancel" onclick="window.location='/Admin/BadgeBank/';" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+

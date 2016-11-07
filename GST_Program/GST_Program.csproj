@@ -156,6 +156,7 @@
     <Content Include="Views\Admin\BadgeDetail.cshtml" />
     <Content Include="Views\Admin\BadgeEdit.cshtml" />
     <Content Include="Views\Admin\BadgeDelete.cshtml" />
+    <Content Include="Views\Admin\BadgeCreate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

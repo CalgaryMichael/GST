@@ -105,7 +105,7 @@ namespace GST_Program.Models {
 		// Create new row in Person
 		public void Create(Person p) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
-				string sqlQuery = "INSERT INTO person VALUES(@Person_ID, @Person_Type, @Person_Name, @Person_Email, @Admin_Status)";
+				string sqlQuery = "INSERT INTO person VALUES('@Person_ID', '@Person_Type', '@Person_Name', '@Person_Email', '@Admin_Status')";
 				db.Execute(sqlQuery, p);
 			}
 		}
@@ -114,7 +114,7 @@ namespace GST_Program.Models {
 		// Create new row in Badge
 		public void Create(Badge b) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
-				string sqlQuery = "INSERT INTO BadgeBank VALUES(@Badge_ID, @Badge_Name, @Badge_Summary, @Badge_Category, @Badge_Give_Type, @Date_Activated, @Date_Retired, @Notes, @Image_Address)";
+				string sqlQuery = "INSERT INTO BadgeBank VALUES(@Badge_ID, @Badge_Name, @Badge_Summary, @Badge_Category, @Badge_Give_Type, @Date_Activated_Str, @Date_Retired, @Notes, @Image_Address)";
 				db.Execute(sqlQuery, b);
 			}
 		}
@@ -123,7 +123,7 @@ namespace GST_Program.Models {
 		// Create new row in BadgeReceived
 		public void Create(BadgeReceived b) {
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)) {
-				string sqlQuery = "INSERT INTO BadgeHistory VALUES(@Transaction_Num, @Badge_ID, @ID_Giver, @Student_ID, @Time_Stamp, @Comment)";
+				string sqlQuery = "INSERT INTO BadgeHistory VALUES('@Transaction_Num', '@Badge_ID', '@ID_Giver', '@Student_ID', '@Time_Stamp', '@Comment')";
 				db.Execute(sqlQuery, b);
 			}
 		}

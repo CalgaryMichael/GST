@@ -55,6 +55,28 @@ namespace GST_Program.Controllers {
 		}
 
 
+		// GET: Admin/BadgeCreate
+		public ActionResult BadgeCreate() {
+			return View();
+		}
+
+
+		// POST: Admin/BadgeCreate
+		[HttpPost]
+		public ActionResult BadgeCreate(Badge b) {
+			DatabaseModel file = new DatabaseModel();
+			b.Date_Activated_Str = b.Date_Activated.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+			if (ModelState.IsValid) {
+				file.Create(b);
+				return RedirectToAction("BadgeBank");
+			}
+
+			// Return same Badge if invalid field(s)
+			return View(b);
+		}
+
+
 		// GET: Admin/BadgeDetail
 		public ActionResult BadgeDetail(string id) {
 			DatabaseModel file = new DatabaseModel();
@@ -91,7 +113,6 @@ namespace GST_Program.Controllers {
 
 
 		// GET: /Admin/BadgeDelete
-		[HttpGet]
 		public ActionResult BadgeDelete(string id) {
 			DatabaseModel file = new DatabaseModel();
 			Badge b = file.ReadSingleBadge(id);
@@ -100,18 +121,13 @@ namespace GST_Program.Controllers {
 		}
 
 
-		// GET: Admin/BadgeDelete
+		// POST: /Admin/BadgeDelete
+		[HttpPost]
 		public ActionResult BadgeDelete(Badge b) {
 			DatabaseModel file = new DatabaseModel();
-
-			if (ModelState.IsValid) {
-				file.Delete(b);
-				return RedirectToAction("BadgeBank");
-			}
-
-			return View(b);
+			file.Delete(b);
+			return RedirectToAction("BadgeBank");
 		}
-		
 
 
 		// Okay, so here is the lowdown on the BadgeHistory pages:
