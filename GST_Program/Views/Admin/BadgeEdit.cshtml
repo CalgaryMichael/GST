@@ -39,7 +39,13 @@
             <tr>
                 <td>Give Type</td>
                 <td>
-                    @Html.EditorFor(m => m.Badge_Give_Type, new { @class = "form-control" }) <br />
+                    @Html.DropDownListFor(m => m.Badge_Give_Type, new List<SelectListItem>
+                    {
+                      new SelectListItem{ Text = "Student-Peer", Value = "Student-Peer" },
+                      new SelectListItem{ Text = "Student-Self", Value = "Student-Self" },
+                      new SelectListItem{ Text = "Faculty-Student", Value = "Faculty-Student" },
+                      new SelectListItem{ Text = "Staff-Student", Value = "Staff-Student" }
+                    }) <br />
                     @Html.ValidationMessageFor(m => m.Badge_Give_Type, "", new { @class = "text-danger" })
                 </td>
             </tr>

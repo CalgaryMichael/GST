@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GST_Program.Domain;
+using GST_Program.Domain.ViewModels;
+using GST_Program.Models;
 
 namespace GST_Program.Controllers {
     public class TreeController : Controller {
@@ -23,7 +25,11 @@ namespace GST_Program.Controllers {
 
 		// GET: Tree/GiveBadge
 		public ActionResult GiveBadge() {
-			return View();
+			DatabaseModel file = new DatabaseModel();
+			BadgeBank bb = new BadgeBank();
+			bb.badges = file.ReadAllBadge();
+
+			return View(bb);
 		}
     }
 }
