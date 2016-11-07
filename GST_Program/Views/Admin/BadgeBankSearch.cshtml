@@ -20,9 +20,9 @@
                     @Html.DisplayFor(modelb => b.Badge_Give_Type)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = b.Badge_ID }) |
+                    @Html.ActionLink("Edit", "BadgeEdit", new { id = b.Badge_ID }) |
                     @Html.ActionLink("Details", "BadgeDetail", new { id = b.Badge_ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = b.Badge_ID })
+                    @Html.ActionLink("Delete", "BadgeDelete", new { id = b.Badge_ID })
                 </td>
             </tr>
         }

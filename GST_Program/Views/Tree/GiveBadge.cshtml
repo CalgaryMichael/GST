@@ -1,7 +1,64 @@
-﻿
+﻿@model GST_Program.Domain.BadgeReceived
 @{
-    ViewBag.Title = "GiveBadge";
+    ViewBag.Title = "Give Badge";
 }
 
-<h2>GiveBadge</h2>
+<h2>Give Badge</h2>
 
+@using (Html.BeginForm()) {
+        <div class="form-group">
+            <table class="table">
+                <tr>
+                    <td>Badge</td>
+                    <td>
+                        @{  List<SelectListItem> sliBadges = new List<SelectListItem>();
+                            foreach (var b in ViewBag.Badges.badges) {
+                                var item = new SelectListItem { Text = b.Badge_Name, Value = b.Badge_ID };
+                                sliBadges.Add(item);
+                            }
+                        }
+                        @Html.DropDownList("Badge_ID", sliBadges, "", new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>Who Are You?: </td>
+                    <td>
+                        @{  List<SelectListItem> sliGiver = new List<SelectListItem>();
+                            foreach (var p in ViewBag.People.people) {
+                                var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
+                                sliGiver.Add(item);
+                            }
+                        }
+                        @Html.DropDownList("ID_Giver", sliGiver, "", new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>Send it to: </td>
+                    <td>
+                        @{  List<SelectListItem> sliReceiver = new List<SelectListItem>();
+                            foreach (var p in ViewBag.People.people) {
+                                var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
+                                sliReceiver.Add(item);
+                            }
+                        }
+                        @Html.DropDownList("Student_ID", sliReceiver, "", new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Comment: 
+                    </td>
+                    <td>
+                        @Html.TextArea("Comment", "", new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input class="btn btn-default" type="submit" value="Save" />
+                        <input class="btn btn-default" type="button" value="Cancel" onclick="window.location='/Admin/BadgeBank/';" />
+                    </td>
+                </tr>
+            </table>
+        </div>     
+}

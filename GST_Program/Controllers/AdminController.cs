@@ -55,6 +55,28 @@ namespace GST_Program.Controllers {
 		}
 
 
+		// GET: Admin/BadgeCreate
+		public ActionResult BadgeCreate() {
+			return View();
+		}
+
+
+		// POST: Admin/BadgeCreate
+		[HttpPost]
+		public ActionResult BadgeCreate(Badge b) {
+			DatabaseModel file = new DatabaseModel();
+			b.Date_Activated_Str = b.Date_Activated.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+			if (ModelState.IsValid) {
+				file.Create(b);
+				return RedirectToAction("BadgeBank");
+			}
+
+			// Return same Badge if invalid field(s)
+			return View(b);
+		}
+
+
 		// GET: Admin/BadgeDetail
 		public ActionResult BadgeDetail(string id) {
 			DatabaseModel file = new DatabaseModel();
@@ -65,6 +87,49 @@ namespace GST_Program.Controllers {
 		}
 
 
+		// GET: Admin/BadgeEdit
+		[HttpGet]
+		public ActionResult BadgeEdit(string id) {
+			DatabaseModel file = new DatabaseModel();
+			Badge b = new Badge();
+			b = file.ReadSingleBadge(id);
+
+			return View(b);
+		}
+
+
+		// POST: Admin/BadgeEdit
+		[HttpPost]
+		public ActionResult BadgeEdit(Badge b) {
+			DatabaseModel file = new DatabaseModel();
+
+			if (ModelState.IsValid) {
+				file.Update(b);
+				return RedirectToAction("BadgeBank");
+			}
+
+			return View(b);
+		}
+
+
+		// GET: /Admin/BadgeDelete
+		public ActionResult BadgeDelete(string id) {
+			DatabaseModel file = new DatabaseModel();
+			Badge b = file.ReadSingleBadge(id);
+
+			return View(b);
+		}
+
+
+		// POST: /Admin/BadgeDelete
+		[HttpPost]
+		public ActionResult BadgeDelete(Badge b) {
+			DatabaseModel file = new DatabaseModel();
+			file.Delete(b);
+			return RedirectToAction("BadgeBank");
+		}
+
+
 		// Okay, so here is the lowdown on the BadgeHistory pages:
 		// in a JQuery call, you will direct it to one of these
 		// view calls depending on what the Admin is searching for
@@ -72,7 +137,7 @@ namespace GST_Program.Controllers {
 		// or what badges that Giver y has given, or what badges
 		// Student z has received).
 
-	
+
 		// GET: Admin/BadgeHistory
 		public ActionResult BadgeHistory() {
 			return View();
