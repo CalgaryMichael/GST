@@ -1,4 +1,4 @@
-﻿@model GST_Program.Domain.BadgeReceived
+﻿@model GST_Program.Domain.Models.BadgeHistory
 @{
     ViewBag.Title = "Give Badge";
 }
@@ -11,7 +11,7 @@
                 <tr>
                     <td>Badge</td>
                     <td>
-                        @{  List<SelectListItem> sliBadges = new List<SelectListItem>();
+                        @{  var sliBadges = new List<SelectListItem>();
                             foreach (var b in ViewBag.Badges.badges) {
                                 var item = new SelectListItem { Text = b.Badge_Name, Value = b.Badge_ID };
                                 sliBadges.Add(item);
@@ -23,7 +23,7 @@
                 <tr>
                     <td>Who Are You?: </td>
                     <td>
-                        @{  List<SelectListItem> sliGiver = new List<SelectListItem>();
+                        @{  var sliGiver = new List<SelectListItem>();
                             foreach (var p in ViewBag.People.people) {
                                 var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
                                 sliGiver.Add(item);
@@ -35,7 +35,7 @@
                 <tr>
                     <td>Send it to: </td>
                     <td>
-                        @{  List<SelectListItem> sliReceiver = new List<SelectListItem>();
+                        @{  var sliReceiver = new List<SelectListItem>();
                             foreach (var p in ViewBag.People.people) {
                                 var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
                                 sliReceiver.Add(item);

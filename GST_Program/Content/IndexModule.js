@@ -1,30 +1,16 @@
-﻿$(document).ready(function () {
-    $('#Student').click(function () {
-        getStudent();
-    });
-
-    $('#Faculty').click(function () {
-        getFaculty();
-    });
-
-    $('#Staff').click(function () {
-        getStaff();
-    });
-});
-
-window.IndexModule = (function () {
-    getStudent = function () {
+﻿window.IndexModule = (function () {
+    function getStudent () {
         $.ajax({
             url: '/Admin/PersonType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Student" },
+            data: { type: 'Student' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
             success: function (data) {
                 $('#results').html(data);
-                $('#type-display').html("Student");
+                $('#type-display').html('Student');
             },
             error: function (data) {
                 $('#results').html(data.responseText);
@@ -35,18 +21,18 @@ window.IndexModule = (function () {
         });
     };
 
-    getFaculty = function () {
+    function getFaculty () {
         $.ajax({
             url: '/Admin/PersonType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Faculty" },
+            data: { type: 'Faculty' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
             success: function (data) {
                 $('#results').html(data);
-                $('#type-display').html("Faculty");
+                $('#type-display').html('Faculty');
             },
             error: function (data) {
                 $('#results').html(data.responseText);
@@ -57,18 +43,18 @@ window.IndexModule = (function () {
         });
     };
 
-    getStaff = function () {
+    function getStaff () {
         $.ajax({
             url: '/Admin/PersonType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Staff" },
+            data: { type: 'Staff' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
             success: function (data) {
                 $('#results').html(data);
-                $('#type-display').html("Professor");
+                $('#type-display').html('Professor');
             },
             error: function (data) {
                 $('#results').html(data.responseText);
@@ -80,14 +66,22 @@ window.IndexModule = (function () {
     };
 
     return {
-        getStudent: function () {
+        init: function() {
+            $(document).ready(function () {
+                $('#Student').click(function () {
+                    getStudent();
+                });
+
+                $('#Faculty').click(function () {
+                    getFaculty();
+                });
+
+                $('#Staff').click(function () {
+                    getStaff();
+                });
+            });
+
             getStudent();
-        },
-        getFaculty: function () {
-            getFaculty();
-        },
-        getStaff: function () {
-            getStaff();
-        },
+        }
     };
 })(jQuery);

@@ -1,4 +1,4 @@
-﻿@model List<GST_Program.Domain.BadgeReceived>
+﻿@model List<GST_Program.Domain.Models.BadgeHistory>
 
 @{
     ViewBag.Title = "GridView";
@@ -6,24 +6,24 @@
 
 <h2>GridView</h2>
 <div class="grid" style="width:100%">
-    @for (int i = 0; i < Math.Ceiling((Model.Count()/7.0)); i++)
+    @for (var i = 0; i < Math.Ceiling(Model.Count/7.0); i++)
     {
         <div class="row" style="height:100px" >
-            @for (int j = 0; j < 7; j++)
+            @for (var j = 0; j < 7; j++)
             {
                 <div class="col-sm-1" style="border:outset; height:inherit">
-                    @if(j + i*7 < Model.Count())
+                    @if(j + i*7 < Model.Count)
                     {
                         <div>
-                            @Html.Raw(Model[j + i * 7].Badge_ID)
+                            @Html.Raw(Model[j + i * 7].BadgeId)
                         </div>
                         <div>
-                            @Html.Raw(Model[j + i * 7].ID_Giver)
+                            @Html.Raw(Model[j + i * 7].GiverId)
                         </div>
                         <div>
-                            @if (Model[j + i * 7].badge != null)
+                            @if (Model[j + i * 7].Badge != null)
                             {
-                                <img id="BadgeImage" src="@Model[j+i*7].badge.Image_Address" />
+                                <img id="BadgeImage" src="@Model[j+i*7].Badge.ImageAddress" />
                             }
                         </div>
                     }

@@ -1,64 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using GST_Program.Domain;
-using GST_Program.Domain.ViewModels;
+using GST_Program.Domain.Models;
+using GST_Program.Domain.Services;
 using GST_Program.Models;
 
-namespace GST_Program.Controllers {
-    public class TreeController : Controller {
+namespace GST_Program.Controllers
+{
+    public class TreeController : Controller
+    {
+        private List<BadgeHistory> _badgeList = new List<BadgeHistory>();
 
-        DatabaseModel database = new DatabaseModel();
-        List<BadgeReceived> badgeList = new List<BadgeReceived>();
-
-		// GET: Tree
-        public ActionResult Index() {
+        // GET: Tree
+        public ActionResult Index()
+        {
             return View();
         }
 
 
-		// GET: Tree/GridView
-		public ActionResult GridView(String ID) {
-            badgeList = database.ReadAllBadgeReceivedByReceiver("10010");
+        // GET: Tree/GridView
+        public ActionResult GridView(string id)
+        {
+            var service = new GstService(SystemContext.GstConnectionString);
 
-			// ID: used to get Badges received by Person with ID
-			return View(badgeList);
-		}
+            _badgeList = service.ReadAllBadgeReceivedByReceiver("10010");
 
-
-		// GET: Tree/GiveBadge
-		public ActionResult GiveBadge() {
-			DatabaseModel file = new DatabaseModel();
-			BadgeBank bb = new BadgeBank();
-			bb.badges = file.ReadAllBadge();
-
-			PersonViewModel pvm = new PersonViewModel();
-			pvm.people = file.ReadAllPerson();
-
-			ViewBag.Badges = bb;
-			ViewBag.People = pvm;
-
-			return View();
-		}
+            // ID: used to get Badges received by Person with ID
+            return View(_badgeList);
+        }
 
 
-		// POST: Tree/GiveBadge
-		[HttpPost]
-		public ActionResult GiveBadge(BadgeReceived b) {
-			DatabaseModel file = new DatabaseModel();
-			b.Time_Stamp = DateTime.Now;
+        // GET: Tree/GiveBadge
+        public ActionResult GiveBadge()
+        {
+            var service = new GstService(SystemContext.GstConnectionString);
 
-			Badge badge = file.ReadSingleBadge(b.Badge_ID);
-			Person giver = file.ReadSinglePerson(b.ID_Giver);
+            var bb = new BadgeBank {Badges = service.ReadAllBadge()};
 
-			if (ModelState.IsValid) {
-				file.Create(b);
-				return RedirectToAction("GridView");
-			}
+            var pvm = service.ReadAllPerson();
 
-			return View(b);
-		}
+            ViewBag.Badges = bb;
+            ViewBag.People = pvm;
+
+            return View();
+        }
+
+
+        // POST: Tree/GiveBadge
+        [HttpPost]
+        public ActionResult GiveBadge(BadgeHistory b)
+        {
+            var service = new GstService(SystemContext.GstConnectionString);
+
+            b.TimeStamp = DateTime.Now;
+
+            var badge = service.ReadSingleBadge(b.BadgeId);
+            var giver = service.ReadSinglePerson(b.GiverId);
+
+            if (ModelState.IsValid)
+            {
+                service.Create(b);
+                return RedirectToAction("GridView");
+            }
+
+            return View(b);
+        }
     }
 }

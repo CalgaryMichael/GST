@@ -1,4 +1,4 @@
-﻿@model GST_Program.Domain.ViewModels.BadgeReceivedList
+﻿@model List<GST_Program.Domain.Models.BadgeHistory>
 
 <div class="row">
     <div class="col-md-12" id="resultSet">
@@ -11,25 +11,25 @@
                     <th>Receiver</th>
                     <th></th>
                 </tr>
-                @foreach (var b in Model.badges) {
+                @foreach (var b in Model) {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelb => b.Transaction_Num)
+                            @Html.DisplayFor(modelb => b.TransactionNum)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.Badge_ID)
+                            @Html.DisplayFor(modelb => b.BadgeId)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.ID_Giver)
+                            @Html.DisplayFor(modelb => b.GiverId)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.Student_ID)
+                            @Html.DisplayFor(modelb => b.StudentId)
                         </td>
                     </tr>
 }
             </table>
         } else {
-            <h3 style="color:#cfcfcf;text-align:center;">No Results for search term <b>"@Model.SearchTerm"</b>, try again.</h3>
+            <h3 style="color:#cfcfcf;text-align:center;">No Results</h3>
         }
     </div>
 </div>
