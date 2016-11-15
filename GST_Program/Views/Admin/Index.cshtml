@@ -1,4 +1,4 @@
-﻿@model GST_Program.Domain.ViewModels.PersonViewModel
+﻿@model IEnumerable<GST_Program.Domain.Models.Person>
 @{
     ViewBag.Title = "Index";
 }
@@ -33,18 +33,16 @@
     </div>
 </div>
 
-
-
 @section scriptsIncludes
 {
-    <script src="~/Scripts/Admin/IndexModule.js?Build=@Guid.NewGuid().ToString()"></script>
+    <script src="~/Content/IndexModule.js?Build=@Guid.NewGuid().ToString()"></script>
 }
 
 @section inlineScript
 {
     <script type="text/javascript">
         $(document).ready(function () {
-            getStudent();
+            window.IndexModule.init();
         });
     </script>
 }

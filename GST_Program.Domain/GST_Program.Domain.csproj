@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,16 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Badge.cs" />
-    <Compile Include="BadgeReceived.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Models\Badge.cs" />
+    <Compile Include="Models\BadgeHistory.cs" />
+    <Compile Include="Extensions\SqlExtensions.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\BadgeBank.cs" />
-    <Compile Include="ViewModels\BadgeReceivedList.cs" />
-    <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="Services\GstService.cs" />
+    <Compile Include="Sql\Scripts.cs" />
+    <Compile Include="Models\BadgeBank.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\CreateDatabase.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sql\CreateTables.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sql\InsertDummyData.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

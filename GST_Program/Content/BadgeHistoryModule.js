@@ -1,11 +1,5 @@
-﻿$(document).ready(function () {
-    $('#searchIcon').click(function () {
-        submitForm();
-    });
-});
-
-window.BadgeHistoryModule = (function ($) {
-    getGiver = function () {
+﻿window.BadgeHistoryModule = (function ($) {
+    function getGiver () {
         $.ajax({
             url: '/Admin/BadgeHistoryGiver',
             type: 'POST',
@@ -26,7 +20,7 @@ window.BadgeHistoryModule = (function ($) {
         });
     };
 
-    getReceiver = function () {
+    function getReceiver () {
         $.ajax({
             url: '/Admin/BadgeHistoryReceiver',
             type: 'POST',
@@ -47,7 +41,7 @@ window.BadgeHistoryModule = (function ($) {
         });
     };
 
-    getBadge = function () {
+    function getBadge () {
         $.ajax({
             url: '/Admin/BadgeHistoryBadge',
             type: 'POST',
@@ -68,8 +62,26 @@ window.BadgeHistoryModule = (function ($) {
         });
     };
 
+    function submitForm () {
+        if ($('input[name="searchType"]:checked').val() === $('#Giver').val()) {
+            getGiver();
+
+        } else if ($('input[name="searchType"]:checked').val() === $('#Receiver').val()) {
+            getReceiver();
+
+        } else if ($('input[name="searchType"]:checked').val() === $('#Badge').val()) {
+            getBadge();
+        }
+    };
+
     return {
         init: function () {
+            $(document).ready(function () {
+                $('#searchIcon').click(function () {
+                    submitForm();
+                });
+            });
+
             $('#txtSearch').keypress(function (e) {
                 if (e.which === 13) {
                     submitForm();
@@ -84,18 +96,6 @@ window.BadgeHistoryModule = (function ($) {
         },
         getBadge: function () {
             getBadge();
-        },
+        }
     };
 })(jQuery);
-
-var submitForm = (function () {
-    if ($('input[name="searchType"]:checked').val() == $('#Giver').val()) {
-        getGiver();
-
-    } else if ($('input[name="searchType"]:checked').val() == $('#Receiver').val()) {
-        getReceiver();
-
-    } else if ($('input[name="searchType"]:checked').val() == $('#Badge').val()) {
-        getBadge();
-    }
-});

@@ -1,4 +1,4 @@
-﻿@model GST_Program.Domain.ViewModels.BadgeBank
+﻿@model IEnumerable<GST_Program.Domain.Models.Badge>
 
 <div class="table-responsive">
     <table class="table table-condensed">
@@ -8,21 +8,22 @@
             <th>Type</th>
             <th></th>
         </tr>
-        @foreach (var b in Model.badges) {
+        @foreach (var b in Model)
+        {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelb => b.Badge_ID)
+                    @Html.DisplayFor(modelb => b.BadgeId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelb => b.Badge_Name)
+                    @Html.DisplayFor(modelb => b.BadgeName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelb => b.Badge_Give_Type)
+                    @Html.DisplayFor(modelb => b.BadgeGiveType)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "BadgeEdit", new { id = b.Badge_ID }) |
-                    @Html.ActionLink("Details", "BadgeDetail", new { id = b.Badge_ID }) |
-                    @Html.ActionLink("Delete", "BadgeDelete", new { id = b.Badge_ID })
+                    @Html.ActionLink("Edit", "BadgeEdit", new {id = b.BadgeId}) |
+                    @Html.ActionLink("Details", "BadgeDetail", new {id = b.BadgeId}) |
+                    @Html.ActionLink("Delete", "BadgeDelete", new {id = b.BadgeId})
                 </td>
             </tr>
         }

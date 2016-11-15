@@ -1,33 +1,10 @@
-﻿$(document).ready(function () {
-    $('#All').click(function () {
-        getAll();
-    });
-
-    $('#St-Pe').click(function () {
-        getPeer();
-    });
-
-    $('#St-Se').click(function () {
-        getSelf();
-    });
-
-    $('#Staff-St').click(function () {
-        getStaff();
-    });
-
-    $('#Fa-St').click(function () {
-        getFaculty();
-    });
-});
-
-
-window.IndexModule = (function () {
-    getAll = function () {
+﻿window.BadgeBankModule = (function ($) {
+    function getAll () {
         $.ajax({
             url: '/Admin/BadgeBankType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "All" },
+            data: { type: 'All' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
@@ -43,12 +20,12 @@ window.IndexModule = (function () {
         });
     };
 
-    getPeer = function () {
+    function getPeer () {
         $.ajax({
             url: '/Admin/BadgeBankType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Student-Peer" },
+            data: { type: 'Student-Peer' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
@@ -64,12 +41,12 @@ window.IndexModule = (function () {
         });
     };
 
-    getSelf = function () {
+    function getSelf () {
         $.ajax({
             url: '/Admin/BadgeBankType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Student-Self" },
+            data: { type: 'Student-Self' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
@@ -85,12 +62,12 @@ window.IndexModule = (function () {
         });
     };
 
-    getStaff = function () {
+    function getStaff () {
         $.ajax({
             url: '/Admin/BadgeBankType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Staff-Student" },
+            data: { type: 'Staff-Student' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
@@ -106,12 +83,12 @@ window.IndexModule = (function () {
         });
     };
 
-    getFaculty = function () {
+    function getFaculty () {
         $.ajax({
             url: '/Admin/BadgeBankType',
             type: 'POST',
             dataType: 'html',
-            data: { type: "Faculty-Student" },
+            data: { type: 'Faculty-Student' },
             beforeSend: function () {
                 $('#spinner').css('display', 'block');
             },
@@ -128,20 +105,30 @@ window.IndexModule = (function () {
     };
 
     return {
-        getAll: function () {
+        init: function () {
+            $(document).ready(function () {
+                $('#All').click(function () {
+                    getAll();
+                });
+
+                $('#St-Pe').click(function () {
+                    getPeer();
+                });
+
+                $('#St-Se').click(function () {
+                    getSelf();
+                });
+
+                $('#Staff-St').click(function () {
+                    getStaff();
+                });
+
+                $('#Fa-St').click(function () {
+                    getFaculty();
+                });
+            });
+
             getAll();
-        },
-        getPeer: function () {
-            getPeer();
-        },
-        getSelf: function () {
-            getSelf();
-        },
-        getStaff: function () {
-            getFaculty();
-        },
-        getProfessor: function () {
-            getProfessor();
-        },
+        }
     };
 })(jQuery);

@@ -4,12 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/bundles/css/bootstrap")
+    @Styles.Render("~/bundles/css/fontawesome")
     @Styles.Render("~/Content/Site.css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/bootstrap.min.css")
-    @Styles.Render("~/GST/font-awesome/css/font-awesome.min.css")
 
-    @RenderSection("additionalCSS", required:false)
+    @RenderSection("additionalCSS", false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,10 +32,9 @@
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-    @RenderSection("scriptsIncludes", required: false)
-    @RenderSection("inlineScript", required: false)
+    @Scripts.Render("~/bundles/js/jquery")
+    @Scripts.Render("~/bundles/js/bootstrap")
+    @RenderSection("scriptsIncludes", false)
+    @RenderSection("inlineScript", false)
 </body>
 </html>

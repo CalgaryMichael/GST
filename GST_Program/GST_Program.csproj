@@ -114,20 +114,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GST\bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="GST\bootstrap\css\bootstrap-responsive.min.css" />
-    <Content Include="GST\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="GST\bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="GST\bootstrap\img\glyphicons-halflings.png" />
-    <Content Include="GST\bootstrap\js\bootstrap.js" />
-    <Content Include="GST\bootstrap\js\bootstrap.min.js" />
-    <Content Include="GST\font-awesome\css\font-awesome.min.css" />
-    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\Admin\BadgeBankModule.js" />
-    <Content Include="Scripts\Admin\BadgeHistoryModule.js" />
-    <Content Include="Scripts\Admin\IndexModule.js" />
+    <Content Include="Content\BadgeBankModule.js" />
+    <Content Include="Content\BadgeHistoryModule.js" />
+    <Content Include="Content\IndexModule.js" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -143,14 +135,11 @@
     <Content Include="Views\Tree\GiveBadge.cshtml" />
     <Content Include="Views\Tree\GridView.cshtml" />
     <Content Include="Views\Admin\BadgeHistorySearch.cshtml" />
-    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="GST\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="GST\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="GST\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Vendor\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="Views\Admin\PersonSearch.cshtml" />
     <Content Include="Views\Admin\BadgeBankSearch.cshtml" />
     <Content Include="Views\Admin\BadgeDetail.cshtml" />
@@ -165,13 +154,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Vendor\bootstrap\js\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -196,15 +185,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DatabaseModel.cs" />
-    <Compile Include="Models\TreeBranchModel.cs" />
+    <Compile Include="Models\SystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\_Git\GST\GST_Program.Domain\GST_Program.Domain.csproj">
+    <ProjectReference Include="..\GST_Program.Domain\GST_Program.Domain.csproj">
       <Project>{2e3565fe-7351-4b97-bda3-bd40ac03b6e3}</Project>
       <Name>GST_Program.Domain</Name>
     </ProjectReference>

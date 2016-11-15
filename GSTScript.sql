@@ -1,50 +1,58 @@
-IF OBJECT_ID('dbo.[BadgeHistory]', 'U') IS NOT NULL 
-  DROP TABLE dbo.[BadgeHistory];
+USE [master]
+
+IF EXISTS(select * from sys.databases where name = 'GST')
+    DROP DATABASE GST
+
+CREATE DATABASE[GST] ON PRIMARY
+    (NAME = GST
+    ,FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\DATA\GST.mdf'
+    ,SIZE = 8192KB
+    ,MAXSIZE = UNLIMITED)
+LOG ON
+    (NAME = N'GST_log'
+    ,FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\DATA\GST_log.ldf'
+    ,SIZE = 8192KB
+    ,MAXSIZE = 2048MB)
 GO
 
-IF OBJECT_ID('dbo.[Person]', 'U') IS NOT NULL 
-  DROP TABLE dbo.[Person];
+USE [GST]
+
+IF OBJECT_ID('[BadgeHistory]', 'U') IS NOT NULL 
+  DROP TABLE [BadgeHistory];
+
+IF OBJECT_ID('[Person]', 'U') IS NOT NULL 
+  DROP TABLE [Person];
+
+IF OBJECT_ID('[BadgeBank]', 'U') IS NOT NULL 
+  DROP TABLE [BadgeBank];
 GO
 
-IF OBJECT_ID('dbo.[BadgeBank]', 'U') IS NOT NULL 
-  DROP TABLE dbo.[BadgeBank];
-GO
-
-CREATE TABLE [dbo].[BadgeBank](
-	[Badge_ID] varchar(10),
-	[Badge_Name] nvarchar(255),
-	[Badge_Summary] nvarchar(255),
-	[Badge_Category] nvarchar(255),
-	[Badge_Give_Type] nvarchar(255),
-	[Date_Activated] datetime,
-	[Date_Retired] nvarchar(255),
-	[Notes] nvarchar(255),
-	[Image_address] nvarchar(255)
-	PRIMARY KEY ([Badge_ID]),
+CREATE TABLE [BadgeBank](
+	[BadgeId]		int				NOT NULL	PRIMARY KEY,
+	[BadgeName]		nvarchar(255),
+	[BadgeSummary]	nvarchar(255),
+	[BadgeCategory]	nvarchar(255),
+	[BadgeGiveType]	nvarchar(255),
+	[DateActivated]	datetime,
+	[DateRetired]	nvarchar(255),
+	[Notes]			nvarchar(255),
+	[Imageaddress]	nvarchar(255)
 );
-GO
 
-CREATE TABLE [dbo].[Person](
-	[Person_ID]				varchar(20)						NOT NULL,
-	[Person_Type]			varchar(20),
-	[Person_Name]			varchar(50),
-	[Person_Email]			varchar(50),
-	[Admin_Status]			varchar(20),
-	PRIMARY KEY ([Person_ID]),
+CREATE TABLE [Person](
+	[PersonId]		int				NOT NULL	PRIMARY KEY,
+	[PersonType]	varchar(20),
+	[PersonName]	varchar(50),
+	[PersonEmail]	varchar(50),
+	[AdminStatus]	varchar(20)
 );
-GO
 
-CREATE TABLE [dbo].[BadgeHistory](
-	[Transaction_Num]		int			IDENTITY			NOT NULL,
-	[Badge_ID]				varchar(10),								
-	[ID_Giver]				varchar(20),						
-	[Student_ID]			varchar(20),						
-	[Time_Stamp]			Date,
-	[Comment]				varchar(50),
-	constraint fk_BadgeID_BadgeHistory	FOREIGN KEY (Badge_ID) REFERENCES BadgeBank (Badge_ID),
-	constraint fk_IDGiver_BadgeHistory	FOREIGN KEY (ID_Giver) REFERENCES Person (Person_ID),
-	constraint fk_StudentID_BadgeHistory FOREIGN KEY (Student_ID) REFERENCES Person (Person_ID),
-	PRIMARY KEY ([Transaction_Num]),
-	
+CREATE TABLE [BadgeHistory](
+	[TransactionNum]	int				IDENTITY	NOT NULL	PRIMARY KEY,
+	[BadgeId]			int				REFERENCES BadgeBank([BadgeId]),
+	[GiverId]			int				REFERENCES Person([PersonId]),
+	[StudentId]			int				REFERENCES Person([PersonId]),
+	[TimeStamp]			DateTime,
+	[Comment]			varchar(50)
 );
 GO

@@ -1,4 +1,4 @@
-﻿@model GST_Program.Domain.ViewModels.BadgeBank
+﻿@model List<GST_Program.Domain.Models.BadgeBank>
 @{
     ViewBag.Title = "Badge Bank";
 }
@@ -25,25 +25,23 @@
         </div>
     </div>
 </div>
-<br />
+<br/>
 <div class="container-fluid">
     <div class="row">
         <div id="results"></div>
     </div>
 </div>
 
-
-
 @section scriptsIncludes
 {
-    <script src="~/Scripts/Admin/BadgeBankModule.js?Build=@Guid.NewGuid().ToString()"></script>
+    <script src="~/Content/BadgeBankModule.js?Build=@Guid.NewGuid().ToString()"></script>
 }
 
 @section inlineScript
 {
     <script type="text/javascript">
-        $(document).ready(function () {
-            getAll();
+        $(document).ready(function() {
+            window.BadgeBankModule.init();
         });
     </script>
 }
