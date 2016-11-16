@@ -6,6 +6,7 @@ using Dapper;
 using GST_Program.Domain.Extensions;
 using GST_Program.Domain.Models;
 using GST_Program.Domain.Sql;
+using Microsoft.Win32;
 
 namespace GST_Program.Domain.Services
 {
@@ -58,7 +59,7 @@ namespace GST_Program.Domain.Services
                 {
                     db.Open();
                     command.ExecuteNonQuery();
-                    return "Tables is Created Successfully";
+                    return "Tables Created Successfully";
                 }
                 catch (System.Exception e)
                 {

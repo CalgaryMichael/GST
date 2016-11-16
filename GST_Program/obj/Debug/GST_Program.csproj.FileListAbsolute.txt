@@ -116,7 +116,6 @@ C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\System.Web.WebPages.Razor.dll
 C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\WebGrease.dll
 C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\GST_Program.Domain.pdb
 C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\Antlr3.Runtime.pdb
-C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\Dapper.xml
 C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\Newtonsoft.Json.xml
 C:\Users\yuoru\Source\Repos\GST\GST_Program\bin\System.Web.Helpers.xml

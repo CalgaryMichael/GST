@@ -20,7 +20,7 @@ CREATE TABLE [Person](
 
 CREATE TABLE [BadgeHistory](
 	[TransactionNum]	int				IDENTITY	NOT NULL	PRIMARY KEY,
-	[BadgeId]			int				REFERENCES BadgeBank([BadgeId]),
+	[BadgeId]			int				REFERENCES Badge([BadgeId]),
 	[GiverId]			int				REFERENCES Person([PersonId]),
 	[StudentId]			int				REFERENCES Person([PersonId]),
 	[TimeStamp]			DateTime,
