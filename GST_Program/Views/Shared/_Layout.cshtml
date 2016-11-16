@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/bundles/css/bootstrap")
+    @Styles.Render("~/bundles/css/datatables")
     @Styles.Render("~/bundles/css/fontawesome")
     @Styles.Render("~/Content/Site.css")
 
@@ -34,6 +35,8 @@
 
     @Scripts.Render("~/bundles/js/jquery")
     @Scripts.Render("~/bundles/js/bootstrap")
+    @Scripts.Render("~/bundles/js/datatables")
+
     @RenderSection("scriptsIncludes", false)
     @RenderSection("inlineScript", false)
 </body>
