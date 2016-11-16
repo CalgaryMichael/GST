@@ -114,8 +114,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Vendor\datatables\css\datatables.css" />
+    <Content Include="Content\Vendor\datatables\css\datatables.min.css" />
+    <Content Include="Content\Vendor\datatables\js\datatables.js" />
+    <Content Include="Content\Vendor\datatables\js\datatables.min.js" />
     <Content Include="Content\Vendor\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Vendor\jquery\jquery-2.2.4.min.js" />
     <Content Include="packages.config" />
     <Content Include="Content\BadgeBankModule.js" />
     <Content Include="Content\BadgeHistoryModule.js" />
@@ -146,6 +158,14 @@
     <Content Include="Views\Admin\BadgeEdit.cshtml" />
     <Content Include="Views\Admin\BadgeDelete.cshtml" />
     <Content Include="Views\Admin\BadgeCreate.cshtml" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,13 +174,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\Vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="Content\Vendor\bootstrap\js\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
