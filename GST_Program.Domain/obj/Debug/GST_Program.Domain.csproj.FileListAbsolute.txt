@@ -9,8 +9,8 @@ C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\GST_Program.Domain.
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\GST_Program.Domain.pdb
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\Dapper.dll
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\Dapper.xml
-C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.csprojResolveAssemblyReference.cache
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.dll
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.pdb
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\Sql\CreateDatabase.sql
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\Sql\CreateTables.sql
+C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.csprojResolveAssemblyReference.cache
