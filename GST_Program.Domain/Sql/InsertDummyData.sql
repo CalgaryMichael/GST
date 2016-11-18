@@ -10,7 +10,7 @@
    ,(10018,'Student',	'Farriss Anne',		'yz@example.com',	'0')
    ,(10019,'Faculty',	'Smith Olette',		'123@example.com',	'1');
 
-INSERT INTO [Badge] VALUES
+INSERT INTO [BadgeBank] VALUES
 	(101,'Thumbs Up',				'Gave meaningful comment(s) during class time',																					'','Student-Peer',		'7-25-16',	'',			'',	'http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/student-peer-badges/animated-gifs/101%20Thumbs%20Up.gif')
    ,(102,'Deep Thinker',			'Prompted deep thought and/or discussion during class time',																	'','Student-Peer',		'7-25-16',	'',			'',	'http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/student-peer-badges/animated-gifs/102%20Deep%20Thinker.gif')
    ,(103,'Mighty Mentor',			'Gave me valued advice on academic, ministry, or personal matters',																'','Student-Peer',		'7-25-16',	'',			'',	'http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/student-peer-badges/animated-gifs/103%20Mighty%20Mentor.gif')

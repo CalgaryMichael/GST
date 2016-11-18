@@ -9,7 +9,7 @@ namespace GST_Program
         {
             // jQuery
             bundles.Add(new ScriptBundle("~/bundles/js/jquery").Include(
-                "~/Content/jquery/jquery-{version}.min.js"));
+                "~/Content/Vendor/jquery/jquery-2.2.4.min.js"));
 
             // jQuery Validate (Remove?)
             bundles.Add(new ScriptBundle("~/bundles/js/jqueryval").Include(

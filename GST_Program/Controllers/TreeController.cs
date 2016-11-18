@@ -52,10 +52,10 @@ namespace GST_Program.Controllers
         {
             var service = new GstService(SystemContext.GstConnectionString);
 
-            b.TimeStamp = DateTime.Now;
+            b.Time_Stamp = DateTime.Now;
 
-            var badge = service.ReadSingleBadge(b.BadgeId);
-            var giver = service.ReadSinglePerson(b.GiverId);
+            var badge = service.ReadSingleBadge(b.Badge_ID);
+            var giver = service.ReadSinglePerson(b.Giver_ID);
 
             if (ModelState.IsValid)
             {

@@ -1,27 +1,25 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace GST_Program.Domain.Models
-{
-    public class Badge
-    {
-        [Required(ErrorMessage = "Please enter valid Badge")]
-        public int BadgeId { get; set; }
+namespace GST_Program.Domain.Models {
+	public class Badge {
+		[Required(ErrorMessage = "Please enter valid Badge")]
+		public int Badge_ID { get; set; }
 
-        [Required(ErrorMessage = "Please enter valid Name")]
-        public string BadgeName { get; set; }
+		[Required(ErrorMessage = "Please enter valid Name")]
+		public string Badge_Name { get; set; }
 
-        [Required(ErrorMessage = "Please enter valid Summary")]
-        public string BadgeSummary { get; set; }
-        public string BadgeCategory { get; set; }
+		[Required(ErrorMessage = "Please enter valid Summary")]
+		public string Badge_Summary { get; set; }
+		public string Badge_Category { get; set; }
 
-        [Required(ErrorMessage = "Please enter valid Give Type")]
-        public string BadgeGiveType { get; set; }
-        public DateTime DateActivated { get; set; }
-        public DateTime DateRetired { get; set; }
-        public string Notes { get; set; }
+		[Required(ErrorMessage = "Please enter valid Give Type")]
+		public string Badge_Give_Type { get; set; }
+		public DateTime Date_Activated { get; set; }
+		public DateTime Date_Retired { get; set; }
+		public string Notes { get; set; }
 
-        [Required(ErrorMessage = "Please enter valid Image Address")]
-        public string ImageAddress { get; set; }
-    }
+		[Required(ErrorMessage = "Please enter valid Image Address")]
+		public string Image_Address { get; set; }
+	}
 }
