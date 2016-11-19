@@ -145,7 +145,7 @@
     <Content Include="Views\Admin\BadgeBank.cshtml" />
     <Content Include="Views\Admin\BadgeHistory.cshtml" />
     <Content Include="Views\Tree\GiveBadge.cshtml" />
-    <Content Include="Views\Tree\GridView.cshtml" />
+    <Content Include="Views\Tree\Grid.cshtml" />
     <Content Include="Views\Admin\BadgeHistorySearch.cshtml" />
     <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
@@ -169,6 +169,7 @@
     <Content Include="Views\Admin\PersonDetail.cshtml" />
     <Content Include="Views\Admin\PersonEdit.cshtml" />
     <Content Include="Views\Admin\PersonDelete.cshtml" />
+    <Content Include="Views\Admin\PersonCreate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

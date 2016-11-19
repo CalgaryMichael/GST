@@ -12,8 +12,9 @@
                     <td>Badge</td>
                     <td>
                         @{  var sliBadges = new List<SelectListItem>();
-                            foreach (var b in ViewBag.Badges.badges) {
-                                var item = new SelectListItem { Text = b.Badge_Name, Value = b.Badge_ID };
+                            foreach (var b in ViewBag.Badges) {
+                                string id = Convert.ToString(b.Badge_ID);
+                                var item = new SelectListItem { Text = b.Badge_Name, Value = id };
                                 sliBadges.Add(item);
                             }
                         }
@@ -24,8 +25,9 @@
                     <td>Who Are You?: </td>
                     <td>
                         @{  var sliGiver = new List<SelectListItem>();
-                            foreach (var p in ViewBag.People.people) {
-                                var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
+                            foreach (var p in ViewBag.People) {
+                                string id = Convert.ToString(p.Person_ID);
+                                var item = new SelectListItem { Text = p.Person_Name, Value = id };
                                 sliGiver.Add(item);
                             }
                         }
@@ -36,8 +38,9 @@
                     <td>Send it to: </td>
                     <td>
                         @{  var sliReceiver = new List<SelectListItem>();
-                            foreach (var p in ViewBag.People.people) {
-                                var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
+                            foreach (var p in ViewBag.People) {
+                                string id = Convert.ToString(p.Person_ID);
+                                var item = new SelectListItem { Text = p.Person_Name, Value = id };
                                 sliReceiver.Add(item);
                             }
                         }

@@ -61,6 +61,25 @@ namespace GST_Program.Controllers {
 			return RedirectToAction("Index");
 		}
 
+		// GET: Admin/PersonCreate
+		public ActionResult PersonCreate() {
+			return View();
+		}
+
+		// POST: Admin/PersonCreate
+		[HttpPost]
+		public ActionResult PersonCreate(Person p) {
+			var service = new Database();
+
+			if (ModelState.IsValid) {
+				service.Create(p);
+				return RedirectToAction("Index");
+			}
+
+			// Return same Person if invalid field(s)
+			return View(p);
+		}
+
 		#endregion
 
 		#region BadgeBank

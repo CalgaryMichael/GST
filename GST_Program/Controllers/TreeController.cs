@@ -5,65 +5,54 @@ using GST_Program.Domain.Models;
 using GST_Program.Domain.Services;
 using GST_Program.Models;
 
-namespace GST_Program.Controllers
-{
-    public class TreeController : Controller
-    {
-        private List<BadgeHistory> _badgeList = new List<BadgeHistory>();
+namespace GST_Program.Controllers {
+	public class TreeController : Controller {
+		private List<BadgeHistory> _badgeList = new List<BadgeHistory>();
 
-        // GET: Tree
-        public ActionResult Index()
-        {
-            return View();
-        }
+		// GET: Tree
+		public ActionResult Index() {
+			return View();
+		}
 
 
-        // GET: Tree/GridView
-        public ActionResult GridView(string id)
-        {
-            var service = new GstService(SystemContext.GstConnectionString);
-
-            _badgeList = service.ReadAllBadgeReceivedByReceiver("10010");
-
-            // ID: used to get Badges received by Person with ID
-            return View(_badgeList);
-        }
+		// GET: Tree/Grid
+		public ActionResult Grid(string id) {
+			var service = new Database();
+			_badgeList = service.ReadAllBadgeReceivedByReceiver("10010");
+			return View(_badgeList);
+		}
 
 
-        // GET: Tree/GiveBadge
-        public ActionResult GiveBadge()
-        {
-            var service = new GstService(SystemContext.GstConnectionString);
+		// GET: Tree/GiveBadge
+		public ActionResult GiveBadge() {
+			var service = new Database();
+			var bb = service.ReadAllBadge();
 
-            var bb = new BadgeBank {Badges = service.ReadAllBadge()};
+			var pvm = service.ReadAllPerson();
 
-            var pvm = service.ReadAllPerson();
+			ViewBag.Badges = bb;
+			ViewBag.People = pvm;
 
-            ViewBag.Badges = bb;
-            ViewBag.People = pvm;
-
-            return View();
-        }
+			return View();
+		}
 
 
-        // POST: Tree/GiveBadge
-        [HttpPost]
-        public ActionResult GiveBadge(BadgeHistory b)
-        {
-            var service = new GstService(SystemContext.GstConnectionString);
+		// POST: Tree/GiveBadge
+		[HttpPost]
+		public ActionResult GiveBadge(BadgeHistory b) {
+			var service = new Database();
 
-            b.Time_Stamp = DateTime.Now;
+			b.Time_Stamp = DateTime.Now;
 
-            var badge = service.ReadSingleBadge(b.Badge_ID);
-            var giver = service.ReadSinglePerson(b.Giver_ID);
+			var badge = service.ReadSingleBadge(b.Badge_ID);
+			var giver = service.ReadSinglePerson(b.Giver_ID);
 
-            if (ModelState.IsValid)
-            {
-                service.Create(b);
-                return RedirectToAction("GridView");
-            }
+			if (ModelState.IsValid) {
+				service.Create(b);
+				return RedirectToAction("GridView");
+			}
 
-            return View(b);
-        }
-    }
+			return View(b);
+		}
+	}
 }
