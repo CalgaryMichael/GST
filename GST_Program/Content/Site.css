@@ -82,3 +82,8 @@ textarea {
 .icon:hover{
     color:#cfcfcf;
 }
+
+#BadgeImage {
+    width: 100px;
+    height: auto;
+}

@@ -12,7 +12,7 @@
                 $('#results').html(data);
             },
             error: function (data) {
-                $('#results').html(data.responseText);
+                $('#results').html("Not in database");
             },
             complete: function () {
                 $('#spinner').css('display', 'none');
@@ -33,7 +33,7 @@
                 $('#results').html(data);
             },
             error: function (data) {
-                $('#results').html(data.responseText);
+                $('#results').html("Not in database");
             },
             complete: function () {
                 $('#spinner').css('display', 'none');
@@ -54,7 +54,7 @@
                 $('#results').html(data);
             },
             error: function (data) {
-                $('#results').html(data.responseText);
+                $('#results').html("Not in database");
             },
             complete: function () {
                 $('#spinner').css('display', 'none');

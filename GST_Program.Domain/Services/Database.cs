@@ -174,35 +174,55 @@ namespace GST_Program.Domain.Services {
 
 		#region Read Single
 
-		// Retrieve Person to edit
+		// Retrieve Person by ID
 		public Person ReadSinglePerson(string ID) {
 			using (IDbConnection db = new SqlConnection(connection)) {
-				return db.Query<Person>("Select * From Person WHERE Person_ID = @ID", new { ID }).SingleOrDefault();
+				return db.Query<Person>("SELECT * FROM Person WHERE Person_ID = @ID", new { ID }).SingleOrDefault();
 			}
 		}
 
 
-		// Retrieve Badge to edit
+		// Retrieve Person by Name
+		public Person ReadSinglePersonByName(string name) {
+			using (IDbConnection db = new SqlConnection(connection)) {
+				return db.Query<Person>("SELECT * FROM Person WHERE Person_Name LIKE '%'+@name+'%'", new { name }).FirstOrDefault();
+			}
+		}
+
+
+		// Retrieve Badge by ID
 		public Badge ReadSingleBadge(string ID) {
 			using (IDbConnection db = new SqlConnection(connection)) {
-				return db.Query<Badge>("Select * From BadgeBank WHERE Badge_ID = @ID", new { ID }).SingleOrDefault();
+				return db.Query<Badge>("SELECT * FROM BadgeBank WHERE Badge_ID = @ID", new { ID }).SingleOrDefault();
 			}
 		}
 
 
-		// Retrieve BadgeReceived to edit
+		// Retrieve Badge by Name
+		public Badge ReadSingleBadgeByName(string name) {
+			using (IDbConnection db = new SqlConnection(connection)) {
+				return db.Query<Badge>("SELECT * FROM BadgeBank WHERE Badge_Name LIKE '%'+@name+'%'", new { name }).FirstOrDefault();
+			}
+		}
+
+
+		// Retrieve BadgeReceived by ID
 		public BadgeHistory ReadSingleBadgeReceived(string ID) {
 			using (IDbConnection db = new SqlConnection(connection)) {
-				string sql = @"SELECT BadgeHistory.*, BadgeBank.*
-								FROM BadgeHistory, BadgeBank
-								WHERE BadgeBank.Badge_ID = BadgeHistory.Badge_ID and BadgeHistory.Transaction_Num = @id";
-				var result = db.Query<BadgeHistory, Badge, BadgeHistory>(sql,
-					(bh, badge) => {
+				string sql = @"SELECT BadgeHistory.*, BadgeBank.*, g.*, r.*
+								FROM BadgeHistory, BadgeBank, Person AS g, Person AS r
+								WHERE BadgeBank.Badge_ID = BadgeHistory.Badge_ID
+								AND g.Person_ID = BadgeHistory.Giver_ID
+								AND r.Person_ID = BadgeHistory.Student_ID
+								AND BadgeHistory.Transaction_Num = @id";
+				var result = db.Query<BadgeHistory, Badge, Person, Person, BadgeHistory>(sql,
+					(bh, badge, giver, receiver) => {
 						bh.Badge = badge;
+						bh.Giver = giver;
+						bh.Receiver = receiver;
 						return bh;
-					},
-					new { id = ID },
-					splitOn: "Badge_ID").FirstOrDefault();
+					}, new { id = ID },
+					splitOn: "Badge_ID,Person_ID,Person_ID").FirstOrDefault();
 
 				return result;
 				//return db.Query<BadgeHistory>("Select * From BadgeBank WHERE Transation_Num = @ID", new { ID }).SingleOrDefault();

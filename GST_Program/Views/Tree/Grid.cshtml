@@ -4,25 +4,27 @@
     ViewBag.Title = "GridView";
 }
 
-<table class="table">
-    <tr>
-        <th>Badge</th>
-        <th>Sender</th>
-        <th>Image</th>
-    </tr>
-@foreach (var badge in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => badge.Badge_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => badge.Giver_ID)
-        </td>
-        <td>
-            @if (badge.Badge != null) {
-                <img id="BadgeImage" src="@badge.Badge.Image_Address"/>
-            }
-        </td>
-    </tr>
-}
-</table>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Badge</th>
+            <th>Sender</th>
+            <th>Image</th>
+        </tr>
+    @foreach (var b in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => b.Badge.Badge_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => b.Giver.Person_Name)
+            </td>
+            <td>
+                @if (b.Badge != null) {
+                    <img class="img-responsive" id="BadgeImage" src="@b.Badge.Image_Address"/>
+                }
+            </td>
+        </tr>
+    }
+    </table>
+</div>

@@ -1,14 +1,14 @@
 ﻿INSERT INTO [Person] VALUES
-	(10010,'Student',	'Ramas Alfred',		'abc@example.com',	'0')
-   ,(10011,'Staff',		'Dunne Leona',		'def@example.com',	'1')
-   ,(10012,'Faculty',	'Smith Kathy',		'ghi@example.com',	'1')
-   ,(10013,'Student',	'Olowski Paul',		'jkl@example.com',	'0')
-   ,(10014,'Staff',		'Orlando Myron',	'mno@example.com',	'1')
-   ,(10015,'Student',	'Brian Amy',		'pqr@example.com',	'0')
-   ,(10016,'Student',	'Brown James',		'stu@example.com',	'0')
-   ,(10017,'Student',	'Williams George',	'vwx@example.com',	'0')
-   ,(10018,'Student',	'Farriss Anne',		'yz@example.com',	'0')
-   ,(10019,'Faculty',	'Smith Olette',		'123@example.com',	'1');
+	(10010,'Student',	'Rob Thompson',			'r.thompson@eagles.oc.edu',	'0')
+   ,(10011,'Staff',		'Calgary Michael',		'seth.michael@eagles.oc.edu',	'1')
+   ,(10012,'Faculty',	'Smith Kathy',			'ghi@example.com',	'1')
+   ,(10013,'Student',	'Olowski Paul',			'jkl@example.com',	'0')
+   ,(10014,'Staff',		'Weston Vidaurri',		'weston.vidaurri@eagles.oc.edu',	'1')
+   ,(10015,'Student',	'Brian Amy',			'pqr@example.com',	'0')
+   ,(10016,'Student',	'Brown James',			'stu@example.com',	'0')
+   ,(10017,'Student',	'Williams George',		'vwx@example.com',	'0')
+   ,(10018,'Student',	'Farriss Anne',			'yz@example.com',	'0')
+   ,(10019,'Faculty',	'Smith Olette',			'123@example.com',	'1');
 
 INSERT INTO [BadgeBank] VALUES
 	(101,'Thumbs Up',				'Gave meaningful comment(s) during class time',																					'','Student-Peer',		'7-25-16',	'',			'',	'http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/student-peer-badges/animated-gifs/101%20Thumbs%20Up.gif')
