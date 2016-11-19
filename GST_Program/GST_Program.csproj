@@ -166,6 +166,9 @@
     <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Admin\PersonDetail.cshtml" />
+    <Content Include="Views\Admin\PersonEdit.cshtml" />
+    <Content Include="Views\Admin\PersonDelete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

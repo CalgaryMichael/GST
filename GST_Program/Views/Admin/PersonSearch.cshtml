@@ -21,6 +21,11 @@
                     <td>
                         @Html.DisplayFor(modelp => p.Person_Type)
                     </td>
+                    <td>
+                        @Html.ActionLink("Details", "PersonDetail", new { id = p.Person_ID }) |
+                        @Html.ActionLink("Edit", "PersonEdit", new { id = p.Person_ID }) |
+                        @Html.ActionLink("Delete", "PersonDelete", new { id = p.Person_ID })
+                    </td>
                 </tr>
             }
         </table>

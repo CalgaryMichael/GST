@@ -15,7 +15,7 @@ CREATE TABLE [Person](
 	[Person_Type]	varchar(20),
 	[Person_Name]	varchar(50),
 	[Person_Email]	varchar(50),
-	[Admin_Status]	varchar(20)
+	[Admin_Status]	BIT,
 );
 
 CREATE TABLE [BadgeHistory](

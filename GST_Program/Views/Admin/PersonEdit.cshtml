@@ -1,0 +1,61 @@
+﻿@model GST_Program.Domain.Models.Person
+@{
+    ViewBag.Title = "PersonEdit";
+}
+
+<h2>PersonEdit</h2>
+
+
+@using (Html.BeginForm()) {
+    <div class="form-group">
+        @Html.HiddenFor(m => m.Person_ID)
+        <table class="table">
+            <tr>
+                <td>ID</td>
+                <td>
+                    @Html.DisplayFor(m => m.Person_ID)
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    @Html.EditorFor(m => m.Person_Name, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Person_Name, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>
+                    @Html.DropDownListFor(m => m.Person_Type, new List<SelectListItem>
+                    {
+                      new SelectListItem{ Text = "Student", Value = "Student" },
+                      new SelectListItem{ Text = "Faculty", Value = "Faculty" },
+                      new SelectListItem{ Text = "Staff", Value = "Staff" }
+                    }) <br />
+                    @Html.ValidationMessageFor(m => m.Person_Type, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    @Html.EditorFor(m => m.Person_Email, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Person_Email, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Admin Status</td>
+                <td>
+                    @Html.EditorFor(m => m.Admin_Status, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Admin_Status, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn btn-default" type="submit" value="Save" />
+                    <input class="btn btn-default" type="button" value="Cancel" onclick="window.location='/Admin/';" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
