@@ -17,13 +17,13 @@
                             @Html.DisplayFor(modelb => b.Transaction_Num)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.Badge_ID)
+                            @Html.DisplayFor(modelb => b.Badge.Badge_Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.Giver_ID)
+                            @Html.DisplayFor(modelb => b.Giver.Person_Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.Student_ID)
+                            @Html.DisplayFor(modelb => b.Receiver.Person_Name)
                         </td>
                     </tr>
 }

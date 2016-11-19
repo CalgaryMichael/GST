@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using GST_Program.Domain.Models;
 using GST_Program.Domain.Services;
+using GST_Program.Models;
+using System;
 
 namespace GST_Program.Controllers {
 	public class AdminController : Controller {
@@ -185,14 +187,30 @@ namespace GST_Program.Controllers {
 		[HttpPost]
 		public ActionResult BadgeHistoryGiver(string id) {
 			var service = new Database();
-			List<BadgeHistory> b = service.ReadAllBadgeReceivedByGiver(id);
-			return View("BadgeHistorySearch", b);
+
+			if (!TestString.IsAllDigits(id)) {
+				Person p = service.ReadSinglePersonByName(id);
+
+				if (p != null)
+					id = p.Person_ID;
+			}
+
+			List<BadgeHistory> result = service.ReadAllBadgeReceivedByGiver(id);
+			return View("BadgeHistorySearch", result);
 		}
 
 		// POST: Admin/BadgeHistoryReceiver
 		[HttpPost]
 		public ActionResult BadgeHistoryReceiver(string id) {
 			var service = new Database();
+
+			if (!TestString.IsAllDigits(id)) {
+				Person p = service.ReadSinglePersonByName(id);
+
+				if (p != null)
+					id = p.Person_ID;
+			}
+
 			List<BadgeHistory> result = service.ReadAllBadgeReceivedByReceiver(id);
 			return View("BadgeHistorySearch", result);
 		}
@@ -201,6 +219,14 @@ namespace GST_Program.Controllers {
 		[HttpPost]
 		public ActionResult BadgeHistoryBadge(string id) {
 			var service = new Database();
+
+			if (!TestString.IsAllDigits(id)) {
+				Badge b = service.ReadSingleBadgeByName(id);
+
+				if (b != null)
+					id = Convert.ToString(b.Badge_ID);
+			}
+
 			List<BadgeHistory> result = service.ReadAllBadgeReceivedByBadge(id);
 			return View("BadgeHistorySearch", result);
 		}
