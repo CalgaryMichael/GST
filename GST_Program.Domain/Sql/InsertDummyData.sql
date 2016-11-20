@@ -2,7 +2,7 @@
 	(10010,'Student',	'Rob Thompson',			'r.thompson@eagles.oc.edu',	'0')
    ,(10011,'Staff',		'Calgary Michael',		'seth.michael@eagles.oc.edu',	'1')
    ,(10012,'Faculty',	'Smith Kathy',			'ghi@example.com',	'1')
-   ,(10013,'Student',	'Olowski Paul',			'jkl@example.com',	'0')
+   ,(10013,'Student',	'Amos Parrish',			'amos.parrish@eagles.oc.edu',	'0')
    ,(10014,'Staff',		'Weston Vidaurri',		'weston.vidaurri@eagles.oc.edu',	'1')
    ,(10015,'Student',	'Brian Amy',			'pqr@example.com',	'0')
    ,(10016,'Student',	'Brown James',			'stu@example.com',	'0')
