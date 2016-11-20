@@ -5,43 +5,26 @@
 
 <h2>Give Badge</h2>
 
-@using (Html.BeginForm()) {
+<div class="container">
+    @using (Html.BeginForm()) {
         <div class="form-group">
             <table class="table">
                 <tr>
                     <td>Badge</td>
                     <td>
-                        @{  var sliBadges = new List<SelectListItem>();
-                            foreach (var b in ViewBag.Badges.badges) {
-                                var item = new SelectListItem { Text = b.Badge_Name, Value = b.Badge_ID };
-                                sliBadges.Add(item);
-                            }
-                        }
-                        @Html.DropDownList("Badge_ID", sliBadges, "", new { @class = "form-control" })
+                        <input type="text" class="form-control" id="badgeSearch" name="badge" placeholder="Badge..." />
                     </td>
                 </tr>
                 <tr>
                     <td>Who Are You?: </td>
                     <td>
-                        @{  var sliGiver = new List<SelectListItem>();
-                            foreach (var p in ViewBag.People.people) {
-                                var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
-                                sliGiver.Add(item);
-                            }
-                        }
-                        @Html.DropDownList("ID_Giver", sliGiver, "", new { @class = "form-control" })
+                        <input type="text" class="form-control" id="personSearch" name="giver" placeholder="Giver..." />
                     </td>
                 </tr>
                 <tr>
                     <td>Send it to: </td>
                     <td>
-                        @{  var sliReceiver = new List<SelectListItem>();
-                            foreach (var p in ViewBag.People.people) {
-                                var item = new SelectListItem { Text = p.Person_Name, Value = p.Person_ID };
-                                sliReceiver.Add(item);
-                            }
-                        }
-                        @Html.DropDownList("Student_ID", sliReceiver, "", new { @class = "form-control" })
+                        <input type="text" class="form-control" id="personSearch" name="receiver" placeholder="Receiver..." />
                     </td>
                 </tr>
                 <tr>
@@ -49,7 +32,7 @@
                         Comment: 
                     </td>
                     <td>
-                        @Html.TextArea("Comment", "", new { @class = "form-control" })
+                        @Html.TextArea("Comment", "", new { placeholder = "Comment...", @class = "form-control" })
                     </td>
                 </tr>
                 <tr>
@@ -61,4 +44,5 @@
                 </tr>
             </table>
         </div>     
-}
+    }
+</div>

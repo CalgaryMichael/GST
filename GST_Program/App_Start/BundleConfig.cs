@@ -9,7 +9,7 @@ namespace GST_Program
         {
             // jQuery
             bundles.Add(new ScriptBundle("~/bundles/js/jquery").Include(
-                "~/Content/jquery/jquery-{version}.min.js"));
+                "~/Content/Vendor/jquery/jquery-2.2.4.min.js"));
 
             // jQuery Validate (Remove?)
             bundles.Add(new ScriptBundle("~/bundles/js/jqueryval").Include(
@@ -31,7 +31,7 @@ namespace GST_Program
 
             // Font Awesome
             bundles.Add(new StyleBundle("~/bundles/css/fontawesome").Include(
-                "~/Content/Vendor/font-awesome/font-awesome.min.css"));
+                "~/Content/Vendor/font-awesome/css/font-awesome.min.css"));
         }
     }
 }

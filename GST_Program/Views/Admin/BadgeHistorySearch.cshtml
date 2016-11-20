@@ -14,16 +14,16 @@
                 @foreach (var b in Model) {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelb => b.TransactionNum)
+                            @Html.DisplayFor(modelb => b.Transaction_Num)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.BadgeId)
+                            @Html.DisplayFor(modelb => b.Badge.Badge_Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.GiverId)
+                            @Html.DisplayFor(modelb => b.Giver.Person_Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelb => b.StudentId)
+                            @Html.DisplayFor(modelb => b.Receiver.Person_Name)
                         </td>
                     </tr>
 }

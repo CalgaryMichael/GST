@@ -1,0 +1,35 @@
+﻿@model GST_Program.Domain.Models.Person
+@{
+    ViewBag.Title = "PersonDetail";
+}
+
+<h2>PersonDetail</h2>
+
+<table class="table">
+    <tr>
+        <td><b>ID</b></td>
+        <td>@Html.DisplayFor(m => m.Person_ID)</td>
+    </tr>
+    <tr>
+        <td><b>Name</b></td>
+        <td>@Html.DisplayFor(m => m.Person_Name)<br /></td>
+    </tr>
+
+    @if (Model.Person_Type != null) {
+        <tr>
+            <td><b>Type</b></td>
+            <td>@Html.DisplayFor(m => m.Person_Type)<br /></td>
+        </tr>
+    }
+
+    @if (Model.Person_Email != null) {
+        <tr>
+            <td><b>Email</b></td>
+            <td>@Html.DisplayFor(m => m.Person_Email)<br /></td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td><input class="btn btn-default" type="button" value="Back" onclick="window.location = '/Admin/'" /></td>
+    </tr>
+</table>

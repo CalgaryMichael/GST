@@ -1,0 +1,30 @@
+﻿@model List<GST_Program.Domain.Models.BadgeHistory>
+
+@{
+    ViewBag.Title = "GridView";
+}
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Badge</th>
+            <th>Sender</th>
+            <th>Image</th>
+        </tr>
+    @foreach (var b in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => b.Badge.Badge_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => b.Giver.Person_Name)
+            </td>
+            <td>
+                @if (b.Badge != null) {
+                    <img class="img-responsive" id="BadgeImage" src="@b.Badge.Image_Address"/>
+                }
+            </td>
+        </tr>
+    }
+    </table>
+</div>
