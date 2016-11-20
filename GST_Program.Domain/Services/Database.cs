@@ -189,6 +189,15 @@ namespace GST_Program.Domain.Services {
 			}
 		}
 
+        // Retrieve Person by email
+        public Person GetPersonByEmail(string email)
+        {
+            using (IDbConnection db = new SqlConnection(connection))
+            {
+                return db.Query<Person>("SELECT * FROM Person WHERE Person_Email LIKE '%'+@email+'%'", new { email }).FirstOrDefault();
+            }
+        }
+
 
 		// Retrieve Badge by ID
 		public Badge ReadSingleBadge(string ID) {

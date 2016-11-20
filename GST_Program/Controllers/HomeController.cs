@@ -9,11 +9,22 @@ namespace GST_Program.Controllers {
 		public ActionResult Index() {
 			var service = new Database();
 
-			service.CreateDatabase();
-			service.CreateTables();
-			service.InsertData();
+            service.CreateDatabase();
+            service.CreateTables();
+            service.InsertData();
 
-			return RedirectToAction("Index", "Admin");
+            //return RedirectToAction("Index", "Admin");
+            return View();
 		}
+        public ActionResult Login(string e)
+        {
+            var service = new Database();
+            var admin = service.GetPersonByEmail(e).Admin_Status;
+            if(admin)
+                return Json(Url.Action("Index", "Admin"));
+            else if (!admin)
+                return Json(Url.Action("Index", "Tree"));
+            return Json(Url.Action("Index", "Home"));
+        }
 	}
 }
