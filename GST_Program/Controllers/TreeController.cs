@@ -22,6 +22,7 @@ namespace GST_Program.Controllers {
 			return View(_badgeList);
 		}
 
+		#region Give Badge
 
 		// GET: Tree/GiveBadge
 		public ActionResult GiveBadge() {
@@ -39,20 +40,44 @@ namespace GST_Program.Controllers {
 
 		// POST: Tree/GiveBadge
 		[HttpPost]
-		public ActionResult GiveBadge(BadgeHistory b) {
+		public ActionResult GiveBadge(FormCollection form) {
 			var service = new Database();
+			BadgeHistory b = new BadgeHistory();
+
+			var badge = form["badge"];
+			var giver = form["giver"];
+			var receiver = form["receiver"];
+			var comment = form["Comment"];
+
+			// Test to see if Form Input for Badge is a Name or a Number
+			if (!TestString.IsAllDigits(badge)) {
+				b.Badge = service.ReadSingleBadgeByName(badge);
+				b.Badge_ID = Convert.ToString(b.Badge.Badge_ID);
+			}
+
+			// Test to see if Form Input for Giver is a Name or a Number
+			if (!TestString.IsAllDigits(giver)) {
+				b.Giver = service.ReadSinglePersonByName(giver);
+				b.Giver_ID = Convert.ToString(b.Giver.Person_ID);
+			}
+
+			// Test to see if Form Input for Receiver is a Name or a Number
+			if (!TestString.IsAllDigits(receiver)) {
+				b.Receiver = service.ReadSinglePersonByName(receiver);
+				b.Student_ID = Convert.ToString(b.Receiver.Person_ID);
+			}
 
 			b.Time_Stamp = DateTime.Now;
-
-			var badge = service.ReadSingleBadge(b.Badge_ID);
-			var giver = service.ReadSinglePerson(b.Giver_ID);
+			b.Comment = comment;
 
 			if (ModelState.IsValid) {
 				service.Create(b);
-				return RedirectToAction("GridView");
+				return RedirectToAction("Grid");
 			}
 
 			return View(b);
 		}
+
+		#endregion
 	}
 }
