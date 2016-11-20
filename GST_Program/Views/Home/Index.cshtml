@@ -24,9 +24,9 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-        sessionStorage.setItem('session_id', id_token);
+        sessionStorage.session_id = id_token;
         console.log("session_id stored");
-        sessionStorage.setItem('profile', profile);
+        sessionStorage.profileName = profile.getName();
         console.log("profile stored");
         console.log("Starting ajax function call...");
         login(profile.getEmail());
