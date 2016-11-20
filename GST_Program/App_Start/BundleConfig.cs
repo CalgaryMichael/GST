@@ -31,7 +31,7 @@ namespace GST_Program
 
             // Font Awesome
             bundles.Add(new StyleBundle("~/bundles/css/fontawesome").Include(
-                "~/Content/Vendor/font-awesome/font-awesome.min.css"));
+                "~/Content/Vendor/font-awesome/css/font-awesome.min.css"));
         }
     }
 }
