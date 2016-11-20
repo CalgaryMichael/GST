@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GST_Program.Domain.Models.Badge>
+﻿@model List<GST_Program.Domain.Models.Badge>
 
 <div class="table-responsive">
     <table class="table table-condensed">
@@ -12,18 +12,18 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelb => b.BadgeId)
+                    @Html.DisplayFor(modelb => b.Badge_ID)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelb => b.BadgeName)
+                    @Html.DisplayFor(modelb => b.Badge_Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelb => b.BadgeGiveType)
+                    @Html.DisplayFor(modelb => b.Badge_Give_Type)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "BadgeEdit", new {id = b.BadgeId}) |
-                    @Html.ActionLink("Details", "BadgeDetail", new {id = b.BadgeId}) |
-                    @Html.ActionLink("Delete", "BadgeDelete", new {id = b.BadgeId})
+                    @Html.ActionLink("Details", "BadgeDetail", new { id = b.Badge_ID }) |
+                    @Html.ActionLink("Edit", "BadgeEdit", new {id = b.Badge_ID }) |
+                    @Html.ActionLink("Delete", "BadgeDelete", new {id = b.Badge_ID })
                 </td>
             </tr>
         }

@@ -8,60 +8,60 @@
 @using (Html.BeginForm())
 {
     <div class="form-group">
-        @Html.HiddenFor(model => model.BadgeId)
+        @Html.HiddenFor(model => model.Badge_ID)
         <table class="table">
             <tr>
                 <td>ID</td>
                 <td>
-                    @Html.DisplayFor(m => m.BadgeId)
+                    @Html.DisplayFor(m => m.Badge_ID)
                 </td>
             </tr>
             <tr>
                 <td>Name</td>
                 <td>
-                    @Html.EditorFor(m => m.BadgeName, new { @class = "form-control" }) <br />
-                    @Html.ValidationMessageFor(m => m.BadgeName, "", new { @class = "text-danger" })
+                    @Html.EditorFor(m => m.Badge_Name, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Name, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
                 <td>Summary</td>
                 <td>
-                    @Html.EditorFor(m => m.BadgeSummary, new { @class = "form-control" }) <br />
-                    @Html.ValidationMessageFor(m => m.BadgeSummary, "", new { @class = "text-danger" })
+                    @Html.EditorFor(m => m.Badge_Summary, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Summary, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
                 <td>Category</td>
                 <td>
-                    @Html.EditorFor(m => m.BadgeCategory, new { @class = "form-control" }) <br />
-                    @Html.ValidationMessageFor(m => m.BadgeCategory, "", new { @class = "text-danger" })
+                    @Html.EditorFor(m => m.Badge_Category, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Badge_Category, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
                 <td>Give Type</td>
                 <td>
-                    @Html.DropDownListFor(m => m.BadgeGiveType, new List<SelectListItem>
+                    @Html.DropDownListFor(m => m.Badge_Give_Type, new List<SelectListItem>
                     {
                       new SelectListItem{ Text = "Student-Peer", Value = "Student-Peer" },
                       new SelectListItem{ Text = "Student-Self", Value = "Student-Self" },
                       new SelectListItem{ Text = "Faculty-Student", Value = "Faculty-Student" },
                       new SelectListItem{ Text = "Staff-Student", Value = "Staff-Student" }
                     }) <br />
-                    @Html.ValidationMessageFor(m => m.BadgeGiveType, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(m => m.Badge_Give_Type, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
                 <td>Date Activated</td>
                 <td>
-                    @Html.EditorFor(m => m.DateActivated, new { @class = "form-control" }) <br />
-                    @Html.ValidationMessageFor(m => m.DateActivated, "", new { @class = "text-danger" })
+                    @Html.EditorFor(m => m.Date_Activated, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Date_Activated, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
                 <td>Date Retired</td>
                 <td>
-                    @Html.EditorFor(m => m.DateRetired, new { @class = "form-control" }) <br />
-                    @Html.ValidationMessageFor(m => m.DateRetired, "", new { @class = "text-danger" })
+                    @Html.EditorFor(m => m.Date_Retired, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Date_Retired, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
@@ -74,8 +74,8 @@
             <tr>
                 <td>Image Address</td>
                 <td>
-                    @Html.EditorFor(m => m.ImageAddress, new { @class = "form-control" }) <br />
-                    @Html.ValidationMessageFor(m => m.ImageAddress, "", new { @class = "text-danger" })
+                    @Html.EditorFor(m => m.Image_Address, new { @class = "form-control" }) <br />
+                    @Html.ValidationMessageFor(m => m.Image_Address, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>

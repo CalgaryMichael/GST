@@ -12,54 +12,54 @@
             <tr>
                 <td>ID</td>
                 <td>
-                    @Html.Editor("BadgeId") <br/>
-                    @Html.ValidationMessage("BadgeId", "", new {@class = "text-danger"})
+                    @Html.Editor("Badge_ID") <br/>
+                    @Html.ValidationMessage("Badge_ID", "", new {@class = "text-danger"})
                 </td>
             </tr>
             <tr>
                 <td>Name</td>
                 <td>
-                    @Html.Editor("BadgeName", new {@class = "form-control"}) <br/>
-                    @Html.ValidationMessage("BadgeName", "", new {@class = "text-danger"})
+                    @Html.Editor("Badge_Name", new {@class = "form-control"}) <br/>
+                    @Html.ValidationMessage("Badge_Name", "", new {@class = "text-danger"})
                 </td>
             </tr>
             <tr>
                 <td>Summary</td>
                 <td>
-                    @Html.Editor("BadgeSummary", new {@class = "form-control"}) <br/>
-                    @Html.ValidationMessage("BadgeSummary", "", new {@class = "text-danger"})
+                    @Html.Editor("Badge_Summary", new {@class = "form-control"}) <br/>
+                    @Html.ValidationMessage("Badge_Summary", "", new {@class = "text-danger"})
                 </td>
             </tr>
             <tr>
                 <td>Category</td>
                 <td>
-                    @Html.Editor("BadgeCategory", new {@class = "form-control"}) <br/>
+                    @Html.Editor("Badge_Category", new {@class = "form-control"}) <br/>
                 </td>
             </tr>
             <tr>
                 <td>Give Type</td>
                 <td>
-                    @Html.DropDownList("BadgeGiveType", new List<SelectListItem>
+                    @Html.DropDownList("Badge_Give_Type", new List<SelectListItem>
                     {
                         new SelectListItem {Text = "Student-Peer", Value = "Student-Peer"},
                         new SelectListItem {Text = "Student-Self", Value = "Student-Self"},
                         new SelectListItem {Text = "Faculty-Student", Value = "Faculty-Student"},
                         new SelectListItem {Text = "Staff-Student", Value = "Staff-Student"}
                     }, "")
-                    @Html.ValidationMessage("BadgeGiveType", "", new {@class = "text-danger"})
+                    @Html.ValidationMessage("Badge_Give_Type", "", new {@class = "text-danger"})
                 </td>
             </tr>
             <tr>
                 <td>Date Activated</td>
                 <td>
-                    @Html.Editor("DateActivated", new {@class = "form-control"}) <br/>
-                    @Html.ValidationMessage("DateActivated", "", new {@class = "text-danger"})
+                    @Html.Editor("Date_Activated", new {@class = "form-control"}) <br/>
+                    @Html.ValidationMessage("Date_Activated", "", new {@class = "text-danger"})
                 </td>
             </tr>
             <tr>
                 <td>Date Retired</td>
                 <td>
-                    @Html.Editor("DateRetired", new {@class = "form-control"}) <br/>
+                    @Html.Editor("Date_Retired", new {@class = "form-control"}) <br/>
                 </td>
             </tr>
             <tr>
@@ -71,8 +71,8 @@
             <tr>
                 <td>Image Address</td>
                 <td>
-                    @Html.Editor("ImageAddress", new {@class = "form-control"}) <br/>
-                    @Html.ValidationMessage("ImageAddress", "", new {@class = "text-danger"})
+                    @Html.Editor("Image_Address", new {@class = "form-control"}) <br/>
+                    @Html.ValidationMessage("Image_Address", "", new {@class = "text-danger"})
                 </td>
             </tr>
             <tr>

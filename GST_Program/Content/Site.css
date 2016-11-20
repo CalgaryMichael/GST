@@ -50,6 +50,10 @@ textarea {
   border-radius: 5px;
 }
 
+.container-1 .give-badge {
+    vertical-align: auto;
+}
+
 .container-1 input#txtSearch::-webkit-input-placeholder {
    color: #cfcfcf;
 }
@@ -81,4 +85,9 @@ textarea {
 
 .icon:hover{
     color:#cfcfcf;
+}
+
+#BadgeImage {
+    width: 100px;
+    height: auto;
 }
