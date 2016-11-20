@@ -37,7 +37,10 @@
               url: "/Home/Login",
               data: { e: email},
               dataType: "json",
-              success: function (response) { window.location.href = response; },
+              success: function (response) {
+                  if (response != "failed")
+                     window.location.href = response;
+              },
               error: function(xhr, ajaxOptions, thrownError) { alert("ERROR"); }
           });
       }
