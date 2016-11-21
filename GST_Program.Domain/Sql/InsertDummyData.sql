@@ -5,9 +5,9 @@
    ,(10013,'Student',	'Olowski Paul',			'jkl@example.com',	'0')
    ,(10014,'Staff',		'Weston Vidaurri',		'weston.vidaurri@eagles.oc.edu',	'1')
    ,(10015,'Student',	'Brian Amy',			'pqr@example.com',	'0')
-   ,(10016,'Student',	'Brown James',			'stu@example.com',	'0')
-   ,(10017,'Student',	'Williams George',		'vwx@example.com',	'0')
-   ,(10018,'Student',	'Farriss Anne',			'yz@example.com',	'0')
+   ,(10016,'Student',	'Amos Parrish',			'amos.parrish@eagles.oc.edu',	'0')
+   ,(10017,'Student',	'Lane Wheeler',		'lane.wheeler@eagles.oc.edu',	'0')
+   ,(10018,'Student',	'Joel Ewald',			'joel.ewald@eagles.oc.edu',	'0')
    ,(10019,'Faculty',	'Smith Olette',			'123@example.com',	'1');
 
 INSERT INTO [BadgeBank] VALUES
