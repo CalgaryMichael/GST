@@ -12,7 +12,7 @@
     @RenderSection("additionalCSS", false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-color">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,7 +20,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div id="navbar" class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse navbar-nav">
+                    <a class="navbar-brand" id="OCBrand" href="#">
+                        <img alt="Brand" src="~/Content/img/OCLogo40x40.png">
+                    </a>
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Person", "Index", "Admin")</li>
                         <li>@Html.ActionLink("Badge Bank", "BadgeBank", "Admin")</li>
@@ -32,7 +35,9 @@
             </div>
         </div>
     </div>
-
+    <div>
+        <br /><br /><br />
+    </div>
     <div class="container body-content">
         @RenderBody()
     </div>

@@ -114,6 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\OCLogo.png" />
+    <Content Include="Content\img\OCLogo40x40.png" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap.css" />
