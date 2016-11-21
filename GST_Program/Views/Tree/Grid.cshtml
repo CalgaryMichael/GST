@@ -29,7 +29,7 @@
                 @foreach (var core in ViewBag.Core) {
                     <tr class="core">
                         <td colspan="4">
-                            @core.CoreBadge.Badge_Name
+                            <b>@core.CoreBadge.Badge_Name</b>
                         </td>
                     </tr>
                     foreach (var competency in core.CompetencyBadge) {
