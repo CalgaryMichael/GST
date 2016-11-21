@@ -18,7 +18,9 @@ namespace GST_Program.Controllers {
 		public ActionResult Grid(string id) {
 			var service = new Database();
 			var person = service.ReadSinglePerson(id);
+			List<Core> core = service.ReadAllCores();
 			ViewBag.Person = person;
+			ViewBag.Core = core;
 			var _badgeList = service.ReadAllBadgeReceivedByReceiver(id);
 			return View(_badgeList);
 		}

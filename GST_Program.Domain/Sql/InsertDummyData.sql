@@ -1,14 +1,14 @@
 ﻿INSERT INTO [Person] VALUES
-	(10010,'Student',	'Rob Thompson',			'r.thompson@eagles.oc.edu',	'0')
+	(10010,'Student',	'Rob Thompson',			'r.thompson@eagles.oc.edu',		'0')
    ,(10011,'Staff',		'Calgary Michael',		'seth.michael@eagles.oc.edu',	'1')
-   ,(10012,'Faculty',	'Smith Kathy',			'ghi@example.com',	'1')
+   ,(10012,'Faculty',	'Smith Kathy',			'ghi@example.com',				'1')
    ,(10013,'Student',	'Amos Parrish',			'amos.parrish@eagles.oc.edu',	'0')
-   ,(10014,'Staff',		'Weston Vidaurri',		'weston.vidaurri@eagles.oc.edu',	'1')
-   ,(10015,'Student',	'Brian Amy',			'pqr@example.com',	'0')
-   ,(10016,'Student',	'Brown James',			'stu@example.com',	'0')
-   ,(10017,'Student',	'Williams George',		'vwx@example.com',	'0')
-   ,(10018,'Student',	'Farriss Anne',			'yz@example.com',	'0')
-   ,(10019,'Faculty',	'Smith Olette',			'123@example.com',	'1');
+   ,(10014,'Staff',		'Weston Vidaurri',		'weston.vidaurri@eagles.oc.edu','1')
+   ,(10015,'Student',	'Brian Amy',			'pqr@example.com',				'0')
+   ,(10016,'Student',	'Brown James',			'stu@example.com',				'0')
+   ,(10017,'Student',	'Williams George',		'vwx@example.com',				'0')
+   ,(10018,'Student',	'Farriss Anne',			'yz@example.com',				'0')
+   ,(10019,'Faculty',	'Smith Olette',			'123@example.com',				'1');
 
 
 INSERT INTO [BadgeBank] VALUES
@@ -58,7 +58,7 @@ INSERT INTO [BadgeBank] VALUES
    ,(413,'Bright Idea',								'Suggested an imporovement to the GST that was implemented',																														'Commendation','Staff-Student',		'7-25-16',	'',			'x','http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/staff-student-badges/animated-gif-images/413%20Bright%20Idea.gif')
    ,(414,'Ambassador',								'Formally represented the GST at an event',																																			'Commendation','Staff-Student',		'7-25-16',	'',			'',	'http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/staff-student-badges/animated-gif-images/414%20Ambassador.gif')
    ,(415,'Thumbs Up!',								'You were noticed for going great today.',																																			'Commendation','Staff-Student',		'8-3-16',	'',			'',	'http://www.oc.edu/academics/graduate/theology/images/digital-badge-images/staff-student-badges/animated-gif-images/415%20Thumbs%20Up.gif')
-   ,(501,'Brief Artculation',						'Student demonstrates ability to clearly articulate core tennants of their faith in written and/or spoken form',																	'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
+   ,(501,'Brief Articulation',						'Student demonstrates ability to clearly articulate core tennants of their faith in written and/or spoken form',																	'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(502,'Faith and Works',							'Student is able to show an understanding of how to incorporate elements of their faith into a formal or informal ministry context, as informed by their learning in the GST',		'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(503,'OT Structure and Theology',				'Demonstrable knowledge of the major sections of the Old Testament, how the overall text is shaped, major theological concepts',													'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(504,'NT Structure and Theology',				'Demonstrable knowledge of the major sections of the New Testament, how it relates/connects to the OT, and major theological concepts contained within.',							'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
@@ -85,7 +85,8 @@ INSERT INTO [BadgeBank] VALUES
 
 INSERT INTO [BadgeHistory] VALUES
 	('201','10010','10010','11/4/16','I read')
-   ,('206','10014','10010','11/4/16','BEYOND!');
+   ,('206','10014','10010','11/7/16','BEYOND!')
+   ,('514','10011','10010','11/12/16','Competency test');
 
 
 INSERT INTO [CoreRelation] VALUES

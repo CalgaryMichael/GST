@@ -14,11 +14,7 @@
     </div>
 
     <div class="row">
-        <h3>Competencies</h3>
-    </div>
-
-    <div class="row">
-        <table class="table" id="competencyTable">
+        <table class="table" id="coreTable">
             <thead>
                 <tr>
                     <th></th>
@@ -29,27 +25,75 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach (var b in Model) {
+                @foreach (var core in Model) {
+                    if (core.Badge.Badge_Category != "Commendation") {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => core.Transaction_Num)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => core.Badge.Badge_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => core.Giver.Person_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => core.Time_Stamp)
+                            </td>
+                            <td>
+                                @if (core.Badge != null) {
+                                    <img class="img-responsive" id="BadgeImage" src="@core.Badge.Image_Address" />
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="row"><hr /></div>
+
+    <div class="row">
+        <h3>Commendations</h3>
+    </div>
+
+    <div class="row">
+        <table class="table" id="commendationTable">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => b.Transaction_Num)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => b.Badge.Badge_Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => b.Giver.Person_Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => b.Time_Stamp)
-                    </td>
-                    <td>
-                        @if (b.Badge != null) {
-                            <img class="img-responsive" id="BadgeImage" src="@b.Badge.Image_Address"/>
-                        }
-                    </td>
+                    <th></th>
+                    <th>Badge</th>
+                    <th>Sender</th>
+                    <th>Time Stamp</th>
+                    <th>Image</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var b in Model) {
+                    if (b.Badge.Badge_Category == "Commendation") {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => b.Transaction_Num)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => b.Badge.Badge_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => b.Giver.Person_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => b.Time_Stamp)
+                            </td>
+                            <td>
+                                @if (b.Badge != null) {
+                                    <img class="img-responsive" id="BadgeImage" src="@b.Badge.Image_Address" />
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
             </tbody>
         </table>
     </div>
