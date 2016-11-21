@@ -50,6 +50,7 @@
     <Compile Include="Models\Badge.cs" />
     <Compile Include="Models\BadgeHistory.cs" />
     <Compile Include="Extensions\SqlExtensions.cs" />
+    <Compile Include="Models\Core.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Database.cs" />

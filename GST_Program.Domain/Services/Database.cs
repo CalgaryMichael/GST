@@ -170,6 +170,36 @@ namespace GST_Program.Domain.Services {
 			}
 		}
 
+		public List<Core> ReadAllCores() {
+			var lookup = new Dictionary<int, Core>();
+
+			using (IDbConnection db = new SqlConnection(connection)) {
+				string sql = @"SELECT *
+								FROM CoreRelation, BadgeBank AS core, BadgeBank AS comp
+								WHERE CoreRelation.Core_ID = core.Badge_ID
+								AND CoreRelation.Competency_ID = comp.Badge_ID";
+				db.Query<Core, Badge, Badge, Core>(sql,
+					(c, b1, b2) => {
+						Core core;
+						if (!lookup.TryGetValue(c.Core_ID, out core)) {
+							core = c;
+							lookup.Add(c.Core_ID, core);
+						}
+						if (core.CompetencyBadge == null)
+							core.CompetencyBadge = new List<Badge>();
+
+						if (core.CoreBadge == null)
+							core.CoreBadge = b1;
+
+						core.CompetencyBadge.Add(b2);
+						return core;
+
+					}, splitOn: "Badge_ID,Badge_ID");
+			}
+
+			return lookup.Values.ToList();
+		}
+
 		#endregion
 
 		#region Read Single
@@ -225,8 +255,35 @@ namespace GST_Program.Domain.Services {
 					splitOn: "Badge_ID,Person_ID,Person_ID").FirstOrDefault();
 
 				return result;
-				//return db.Query<BadgeHistory>("Select * From BadgeBank WHERE Transation_Num = @ID", new { ID }).SingleOrDefault();
 			}
+		}
+
+
+		// Populate Single Core with all Competencies tied to it
+		public Core ReadSingleCore(string ID) {
+			Core c = null;
+
+			using (IDbConnection db = new SqlConnection(connection)) {
+				string sql = @"SELECT CoreRelation.*, core.*, comp.*
+								FROM CoreRelation, BadgeBank AS core, BadgeBank AS comp
+								WHERE CoreRelation.Core_ID = core.Badge_ID
+								AND CoreRelation.Competency_ID = comp.Badge_ID
+								AND CoreRelation.Core_ID = @id";
+				var result = db.Query<Core, Badge, Badge, Badge>(sql,
+					(cr, core, competency) => {
+						if (c == null)
+							c = cr;
+
+						c.CoreBadge = core;
+						return competency;
+					}, new { id = ID },
+					splitOn:"Badge_ID,Badge_ID").AsList();
+				if (c != null) {
+					c.CompetencyBadge = result;
+				}
+			}
+
+			return c;
 		}
 
 		#endregion

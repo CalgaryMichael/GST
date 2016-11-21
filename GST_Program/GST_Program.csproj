@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\GridModule.js" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap.css" />
@@ -170,6 +171,7 @@
     <Content Include="Views\Admin\PersonEdit.cshtml" />
     <Content Include="Views\Admin\PersonDelete.cshtml" />
     <Content Include="Views\Admin\PersonCreate.cshtml" />
+    <Content Include="Views\Tree\BadgeHistoryDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
