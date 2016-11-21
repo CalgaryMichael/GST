@@ -1,7 +1,8 @@
 ﻿$(document).ready(function () {
-    var table = $('#datatable').DataTable({
+    var table = $('#competencyTable').DataTable({
         "info": false,
         "pagingType": "simple",
+        "pageLength": 5,
         "order": [[3, "desc"]],
         "columnDefs": [
             {
@@ -20,11 +21,10 @@
                 "searchable": false,
                 "visible": false
             }
-
         ]
     });
 
-    $('#datatable tbody').on('click', 'tr', function () {
+    $('#competencyTable tbody').on('click', 'tr', function () {
         var data = table.row(this).data();
         window.location.href = "/Tree/BadgeHistoryDetail/" + data[0];
     });
