@@ -177,7 +177,7 @@ namespace GST_Program.Domain.Services {
 				string sql = @"SELECT *
 								FROM CoreRelation, BadgeBank AS core, BadgeBank AS comp
 								WHERE CoreRelation.Core_ID = core.Badge_ID
-								AND CoreRelation.Core_ID = comp.Badge_ID";
+								AND CoreRelation.Competency_ID = comp.Badge_ID";
 				db.Query<Core, Badge, Badge, Core>(sql,
 					(c, b1, b2) => {
 						Core core;

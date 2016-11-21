@@ -91,3 +91,18 @@ textarea {
     width: 100px;
     height: auto;
 }
+
+.core {
+    border-bottom: medium solid lightgrey;
+}
+
+.unachieved {
+    background-color: lightgrey;
+}
+
+.achieved {
+    background-color: lightgreen;
+    color: black;
+}
+
+

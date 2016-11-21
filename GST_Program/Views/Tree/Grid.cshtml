@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "GridView";
+    Boolean isAchieved = false;
+    DateTime badgeDT = new DateTime();
 }
 
 <div class="container">
@@ -19,33 +21,53 @@
                 <tr>
                     <th></th>
                     <th>Badge</th>
-                    <th>Sender</th>
                     <th>Time Stamp</th>
                     <th>Image</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var core in Model) {
-                    if (core.Badge.Badge_Category != "Commendation") {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => core.Transaction_Num)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => core.Badge.Badge_Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => core.Giver.Person_Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => core.Time_Stamp)
-                            </td>
-                            <td>
-                                @if (core.Badge != null) {
-                                    <img class="img-responsive" id="BadgeImage" src="@core.Badge.Image_Address" />
-                                }
-                            </td>
-                        </tr>
+                @foreach (var core in ViewBag.Core) {
+                    <tr class="core">
+                        <td colspan="4">
+                            @core.CoreBadge.Badge_Name
+                        </td>
+                    </tr>
+                    foreach (var competency in core.CompetencyBadge) {
+                        foreach (var b in Model) {
+                            if (b.Badge.Badge_ID == competency.Badge_ID) {
+                                isAchieved = true;
+                                badgeDT = b.Time_Stamp;
+                            } else {
+                                isAchieved = false;
+                                badgeDT = new DateTime();
+                            }
+                        }
+
+                        if (isAchieved) {
+                            <tr class="achieved">
+                                <td></td>
+                                <td>
+                                    @competency.Badge_Name
+                                </td>
+                                <td>
+                                    @badgeDT
+                                </td>
+                                <td>
+                                    <img src="@competency.Image_Address" />
+                                </td>
+                            </tr>
+                        } else {
+                            <tr class="unachieved">
+                                <td></td>
+                                <td>
+                                    @competency.Badge_Name
+                                </td>
+                                <td></td>
+                                <td>
+                                    <img src="@competency.Image_Address" />
+                                </td>
+                            </tr>
+                        }
                     }
                 }
             </tbody>
