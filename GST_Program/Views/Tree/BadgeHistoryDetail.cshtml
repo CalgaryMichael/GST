@@ -1,0 +1,44 @@
+﻿@model GST_Program.Domain.Models.BadgeHistory
+@{
+    ViewBag.Title = "Badge Detail";
+}
+
+<h2>Badge Detail</h2>
+
+<table class="table">
+    <tr>
+        <td><b>ID</b></td>
+        <td>@Html.DisplayFor(m => m.Badge.Badge_Name)</td>
+    </tr>
+    <tr>
+        <td><b>Giver</b></td>
+        <td>@Html.DisplayFor(m => m.Giver.Person_Name)<br /></td>
+    </tr>
+
+    <tr>
+        <td><b>Receiver</b></td>
+        <td>@Html.DisplayFor(m => m.Receiver.Person_Name)<br /></td>
+    </tr>
+    
+    <tr>
+        <td><b>Time Stamp</b></td>
+        <td>@Html.DisplayFor(m => m.Time_Stamp)<br /></td>
+    </tr>
+
+    @if (Model.Comment != null) {
+        <tr>
+            <td><b>Comments</b></td>
+            <td>@Html.DisplayFor(m => m.Comment) <br /></td>
+        </tr>
+    }
+
+    <tr>
+        <td><b>Image</b></td>
+        <td><img class="img-responsive" id="BadgeImage" src="@Model.Badge.Image_Address" /><br /></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input class="btn btn-default" type="button" value="Back" onclick="parent.history.back()" /></td>
+    </tr>
+</table>

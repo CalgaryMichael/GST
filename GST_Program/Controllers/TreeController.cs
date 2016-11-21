@@ -7,7 +7,6 @@ using GST_Program.Models;
 
 namespace GST_Program.Controllers {
 	public class TreeController : Controller {
-		private List<BadgeHistory> _badgeList = new List<BadgeHistory>();
 
 		// GET: Tree
 		public ActionResult Index() {
@@ -18,8 +17,23 @@ namespace GST_Program.Controllers {
 		// GET: Tree/Grid
 		public ActionResult Grid(string id) {
 			var service = new Database();
-			_badgeList = service.ReadAllBadgeReceivedByReceiver("10010");
-			return View(_badgeList);
+			var person = service.ReadSinglePerson(id);
+			ViewBag.Person = person;
+
+			List<Core> core = service.ReadAllCores();
+			ViewBag.Core = core;
+
+			var badgeHistoryList = service.ReadAllBadgeReceivedByReceiver(id);
+
+			return View(badgeHistoryList);
+		}
+
+
+		// GET: Tree/BadgeHistoryDetail
+		public ActionResult BadgeHistoryDetail(string id) {
+			var service = new Database();
+			var b = service.ReadSingleBadgeReceived(id);
+			return View(b);
 		}
 
 		#region Give Badge
@@ -72,7 +86,7 @@ namespace GST_Program.Controllers {
 
 			if (ModelState.IsValid) {
 				service.Create(b);
-				return RedirectToAction("Grid");
+				return RedirectToAction($"Grid/{b.Student_ID}");
 			}
 
 			return View(b);
