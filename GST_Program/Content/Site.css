@@ -50,6 +50,10 @@ textarea {
   border-radius: 5px;
 }
 
+.container-1 .give-badge {
+    vertical-align: auto;
+}
+
 .container-1 input#txtSearch::-webkit-input-placeholder {
    color: #cfcfcf;
 }
@@ -87,3 +91,18 @@ textarea {
     width: 100px;
     height: auto;
 }
+
+.core {
+    border-bottom: medium solid lightgrey;
+}
+
+.unachieved {
+    background-color: lightgrey;
+}
+
+.achieved {
+    background-color: lightgreen;
+    color: black;
+}
+
+

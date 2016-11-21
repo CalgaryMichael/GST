@@ -26,3 +26,9 @@ CREATE TABLE [BadgeHistory](
 	[Time_Stamp]		DateTime,
 	[Comment]			varchar(50)
 );
+
+CREATE TABLE [CoreRelation](
+	[Relation_ID]		int				IDENTITY	NOT NULL	PRIMARY KEY,
+	[Core_ID]			int				REFERENCES BadgeBank([Badge_ID]),
+	[Competency_ID]		int				REFERENCES BadgeBank([Badge_ID]),
+);
