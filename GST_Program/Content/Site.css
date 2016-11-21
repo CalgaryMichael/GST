@@ -4,12 +4,12 @@
 }*/
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
-/* LAYOUT CSS */
+/*----------- LAYOUT CSS -----------*/
 .navbar-color{
     background-color: #801818;
     color: #ffffff;
@@ -22,11 +22,7 @@
     bottom: 18px;
     left: 20px;
 }
-
-
-
-
-/*------------------------------------*/
+/*----------------------------------*/
 
 
 
