@@ -23,7 +23,7 @@ namespace GST_Program.Controllers {
             if(admin)
                 return Json(Url.Action("Index", "Admin"));
             else if (!admin)
-                return Json(Url.Action("Index", "Tree"));
+                return Json(Url.Action("Index", "Tree/Grid/"+service.GetPersonByEmail(e).Person_ID));
             return Json("failed");
         }
 	}
