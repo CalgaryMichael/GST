@@ -44,7 +44,6 @@ namespace GST_Program.Controllers {
 		public ActionResult GiveBadge() {
 			var service = new Database();
 			var bb = service.ReadAllBadge();
-
 			var pvm = service.ReadAllPerson();
 
 			ViewBag.Badges = bb;
@@ -59,32 +58,33 @@ namespace GST_Program.Controllers {
 		public ActionResult GiveBadge(FormCollection form) {
 			var service = new Database();
 			BadgeHistory b = new BadgeHistory();
-
-			var badge = form["badge"];
-			var giver = form["giver"];
+			
 			var receiver = form["receiver"];
 			var comment = form["Comment"];
-
-			// Test to see if Form Input for Badge is a Name or a Number
-			if (!TestString.IsAllDigits(badge)) {
-				b.Badge = service.ReadSingleBadgeByName(badge);
-				b.Badge_ID = Convert.ToString(b.Badge.Badge_ID);
-			}
-
-			// Test to see if Form Input for Giver is a Name or a Number
-			if (!TestString.IsAllDigits(giver)) {
-				b.Giver = service.ReadSinglePersonByName(giver);
-				b.Giver_ID = Convert.ToString(b.Giver.Person_ID);
-			}
+			
+			// Find Badge
+			b.Badge = service.ReadSingleBadge(form["badge"]);
+			b.Badge_ID = b.Badge.Badge_ID;
+			
+			// Find Person logged in
+			b.Giver = service.ReadSinglePersonByName(form["giver"]);
+			b.Giver_ID = Convert.ToString(b.Giver.Person_ID);
 
 			// Test to see if Form Input for Receiver is a Name or a Number
 			if (!TestString.IsAllDigits(receiver)) {
 				b.Receiver = service.ReadSinglePersonByName(receiver);
 				b.Student_ID = Convert.ToString(b.Receiver.Person_ID);
+			} else {
+				b.Receiver = service.ReadSinglePerson(receiver);
+				b.Student_ID = receiver;
 			}
 
 			b.Time_Stamp = DateTime.Now;
 			b.Comment = comment;
+
+			// Fill this in with the calculations for the X/Y assignment
+			b.Pos_X = 0;
+			b.Pos_Y = 0;
 
 			if (ModelState.IsValid) {
 				service.Create(b);

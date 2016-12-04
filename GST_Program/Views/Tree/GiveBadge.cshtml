@@ -6,19 +6,19 @@
 <h2>Give Badge</h2>
 
 <div class="container">
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("GiveBadge", "Tree", FormMethod.Post, new { id="giveBadge" })) {
         <div class="form-group">
             <table class="table">
                 <tr>
                     <td>Badge</td>
                     <td>
-                        <input type="text" class="form-control" id="badgeSearch" name="badge" placeholder="Badge..." />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Who Are You?: </td>
-                    <td>
-                        <input type="text" class="form-control" id="personSearch" name="giver" placeholder="Giver..." />
+                        @{  var sliBadges = new List<SelectListItem>();
+                            foreach (var b in ViewBag.Badges) {
+                                var item = new SelectListItem { Text = b.Badge_Name, Value = ""+b.Badge_ID };
+                                sliBadges.Add(item);
+                            }
+                        }
+                        @Html.DropDownList("badge", sliBadges, "", new { @class = "form-control" })
                     </td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input class="btn btn-default" type="submit" value="Save" />
+                        <input class="btn btn-default" type="submit" value="Send" />
                         <input class="btn btn-default" type="button" value="Cancel" onclick="parent.history.back()" />
                     </td>
                 </tr>
@@ -46,3 +46,21 @@
         </div>     
     }
 </div>
+
+
+@section inlineScript {
+    <script>
+        function addGiver(theForm, key, value) {
+            // Create a hidden input element, and append it to the form:
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key; 'name-as-seen-at-the-server';
+            input.value = value;
+            theForm.appendChild(input);
+        }
+
+        var giveBadgeForm = document.forms["giveBadge"];
+
+        addGiver(giveBadgeForm, "giver", sessionStorage.profileName);
+    </script>
+}
