@@ -1,15 +1,28 @@
-﻿
+﻿@model List<GST_Program.Domain.Models.BadgeHistory>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tree";
 }
 
-<h2 id="user">Index</h2>
+<h2 id="user">Tree</h2>
 
-@section inlineScript
-{
+<div class="container">
+    
+    @*@foreach (var b in Model) {
+        <canvas id="@b.Transaction_Num"></canvas>
+    }*@
+    <canvas id="treeCanvas" width="800" height="700"></canvas>
+</div>
+
+
+@section scriptsIncludes {
+    <script src="~/Content/Vendor/jcanvas/jcanvas.min.js?Build=@Guid.NewGuid().ToString()"></script>
+    <script src="~/Content/Modules/TreeViewModule.js?Build=@Guid.NewGuid().ToString()"></script>
+}
+
+@section inlineScript {
     <script type="text/javascript">
         $(document).ready(function () {
-            window.IndexModule.init();
+            //window.PersonModule.init();
             document.getElementById('user').innerHTML = sessionStorage.profileName;
         });
     </script>

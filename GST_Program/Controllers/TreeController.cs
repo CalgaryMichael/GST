@@ -9,8 +9,10 @@ namespace GST_Program.Controllers {
 	public class TreeController : Controller {
 
 		// GET: Tree
-		public ActionResult Index() {
-			return View();
+		public ActionResult Index(string id) {
+			var service = new Database();
+			List<BadgeHistory> b = service.ReadAllBadgeReceivedByReceiver(id);
+			return View(b);
 		}
 
 
