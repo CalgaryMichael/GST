@@ -31,6 +31,12 @@
                     source: '../../Content/TreeImages/Badge/leaf.png',
                     name: 'b_@b.Transaction_Num',
                     layer: true,
+                    mouseover: function() {
+                        $(this).css('cursor','pointer'); 
+                    },
+                    click: function(layer) {
+                        window.location.href = "/Tree/BadgeHistoryDetail/" + @b.Transaction_Num;
+                    },
                     x: @b.Pos_X, y: @b.Pos_Y,
                     scale: 1
                 });
