@@ -1,14 +1,18 @@
 ﻿var $treeCanvas = $('#treeCanvas');
 
-$treeCanvas.addLayer({
-    type: 'image',
+$treeCanvas.drawImage({
     source: '../../Content/TreeImages/Tree/tree.jpg',
-    fromCenter: false
-})
-.addLayer({
-    type: 'image',
+    layer: true,
+    groups: ['tree'],
+    fromCenter: false,
+    Index: 0
+});
+
+$treeCanvas.drawImage({
     source: '../../Content/TreeImages/Badge/apple.png',
+    layer: true,
+    name: 'apple',
     x: 440, y: 355,
     scale: 0.015
-})
-.drawLayers();
+});
+$treeCanvas.addLayerToGroup('apple', 'tree');

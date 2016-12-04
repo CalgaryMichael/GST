@@ -1,4 +1,5 @@
 ﻿@model List<GST_Program.Domain.Models.BadgeHistory>
+@using Newtonsoft.Json
 @{
     ViewBag.Title = "Tree";
 }
@@ -6,10 +7,6 @@
 <h2 id="user">Tree</h2>
 
 <div class="container">
-    
-    @*@foreach (var b in Model) {
-        <canvas id="@b.Transaction_Num"></canvas>
-    }*@
     <canvas id="treeCanvas" width="800" height="700"></canvas>
 </div>
 
@@ -25,6 +22,21 @@
             //window.PersonModule.init();
             document.getElementById('user').innerHTML = sessionStorage.profileName;
         });
+
+        var $treeCanvas = $('#treeCanvas');
+
+        @foreach (var b in Model) {
+            <text>
+                $treeCanvas.drawImage({
+                    source: '../../Content/TreeImages/Badge/leaf.png',
+                    name: 'b_@b.Transaction_Num',
+                    layer: true,
+                    x: @b.Pos_X, y: @b.Pos_Y,
+                    scale: 1
+                });
+                $treeCanvas.addLayerToGroup('b_@b.Transaction_Num', 'tree');
+            </text>
+        }
     </script>
 }
 
