@@ -86,6 +86,7 @@ namespace GST_Program.Controllers {
 
 			if (ModelState.IsValid) {
 				service.Create(b);
+                service.SendEmail(b);
 				return RedirectToAction($"Grid/{b.Student_ID}");
 			}
 
