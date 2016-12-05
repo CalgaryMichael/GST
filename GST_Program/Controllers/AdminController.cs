@@ -232,5 +232,17 @@ namespace GST_Program.Controllers {
 		}
 
 		#endregion
+
+		#region Export
+
+		public void Export(string type) {
+			var T = Type.GetType(type);
+			var obj = Activator.CreateInstance(T);
+			var fileData = new ExportData().BuildData<obj>();
+
+			var test = "";
+		}
+
+		#endregion
 	}
 }

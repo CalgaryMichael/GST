@@ -102,7 +102,29 @@ namespace GST_Program.Domain.Services {
 		}
 
 
-		// Populate List<BadgeReceived> with rows in the Db equal to Giver ID
+		// Populate List<BadgeHistory> with rows in the Db
+		public List<BadgeHistory> ReadAllBadgeReceived() {
+			using (IDbConnection db = new SqlConnection(connection)) {
+				string sql = @"SELECT BadgeHistory.*, BadgeBank.*, g.*, r.*
+								FROM BadgeHistory, BadgeBank, Person AS g, Person AS r
+								WHERE BadgeBank.Badge_ID = BadgeHistory.Badge_ID
+								AND g.Person_ID = BadgeHistory.Giver_ID
+								AND r.Person_ID = BadgeHistory.Student_ID";
+				var result = db.Query<BadgeHistory, Badge, Person, Person, BadgeHistory>(sql,
+					(bh, badge, giver, receiver) => {
+						bh.Badge = badge;
+						bh.Giver = giver;
+						bh.Receiver = receiver;
+						return bh;
+					},
+					splitOn: "Badge_ID,Person_ID,Person_ID").AsList();
+
+				return result;
+			}
+		}
+
+
+		// Populate List<BadgeHistory> with rows in the Db equal to Giver ID
 		public List<BadgeHistory> ReadAllBadgeReceivedByGiver(string ID) {
 			using (IDbConnection db = new SqlConnection(connection)) {
 				string sql = @"SELECT BadgeHistory.*, BadgeBank.*, g.*, r.*
@@ -125,7 +147,7 @@ namespace GST_Program.Domain.Services {
 		}
 
 
-		// Populate List<BadgeReceived> with rows in the Db equal to Receiver ID
+		// Populate List<BadgeHistory> with rows in the Db equal to Receiver ID
 		public List<BadgeHistory> ReadAllBadgeReceivedByReceiver(string ID) {
 			using (IDbConnection db = new SqlConnection(connection)) {
 				string sql = @"SELECT BadgeHistory.*, BadgeBank.*, g.*, r.*
@@ -148,7 +170,7 @@ namespace GST_Program.Domain.Services {
 		}
 
 
-		// Populate List<BadgeReceived> with rows in the Db equal to Badge ID
+		// Populate List<BadgeHistory> with rows in the Db equal to Badge ID
 		public List<BadgeHistory> ReadAllBadgeReceivedByBadge(string ID) {
 			using (IDbConnection db = new SqlConnection(connection)) {
 				string sql = @"SELECT BadgeHistory.*, BadgeBank.*, g.*, r.*
