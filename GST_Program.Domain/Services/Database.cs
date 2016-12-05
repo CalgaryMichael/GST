@@ -372,7 +372,7 @@ namespace GST_Program.Domain.Services {
             mail.From = new MailAddress("gstbadge@gmail.com", "GST BADGE", System.Text.Encoding.UTF8);
             mail.Subject = "Badge Received";
             mail.SubjectEncoding = System.Text.Encoding.UTF8;
-            mail.Body = ("<p>"+b.Badge.Badge_Name+" Badge Received From: "+b.Giver.Person_Name+"</p>"+"<div>"+b.Comment+"</div>");
+            mail.Body = ("<h1>"+b.Badge.Badge_Name+" Badge Received From: "+b.Giver.Person_Name+"</h1>"+"<p>Comment: "+b.Comment+"</p>");
             mail.BodyEncoding = System.Text.Encoding.UTF8;
             mail.IsBodyHtml = true;
             mail.Priority = MailPriority.High;
