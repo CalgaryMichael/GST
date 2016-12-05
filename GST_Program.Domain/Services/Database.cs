@@ -379,7 +379,7 @@ namespace GST_Program.Domain.Services {
             SmtpClient client = new SmtpClient();
             client.Credentials = new System.Net.NetworkCredential("gstbadge@gmail.com", "GSTBADGE0946382");
             client.Port = 587;
-            client.Host = "smtp.gmail.com";
+            client.Host = "smtp.gmail.com"; 
             client.EnableSsl = true;
             try
             {
