@@ -86,6 +86,13 @@ namespace GST_Program.Controllers {
 			b.Time_Stamp = DateTime.Now;
 			b.Comment = comment;
 
+            //replace '1' with the badge count for a person (or any positive number if you want a different position)
+            TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(1));
+
+            b.Pos_X = bPos.pos_x;
+            b.Pos_Y = bPos.pos_y;
+            //rotation angle will be put here
+
 			if (ModelState.IsValid) {
 				service.Create(b);
 				return RedirectToAction($"Grid/{b.Student_ID}");
