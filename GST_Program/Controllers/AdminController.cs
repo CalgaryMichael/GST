@@ -4,6 +4,7 @@ using GST_Program.Domain.Models;
 using GST_Program.Domain.Services;
 using GST_Program.Models;
 using System;
+using System.IO;
 
 namespace GST_Program.Controllers {
 	public class AdminController : Controller {
@@ -235,12 +236,42 @@ namespace GST_Program.Controllers {
 
 		#region Export
 
-		public void Export(string type) {
-			var T = Type.GetType(type);
-			var obj = Activator.CreateInstance(T);
-			var fileData = new ExportData().BuildData<obj>();
+		// GET: ExportPerson
+		public void ExportPerson() {
+			var fileData = new ExportData().BuildData<Person>();
 
-			var test = "";
+			Response.Clear();
+			Response.ContentType = "text/csv";
+			Response.AddHeader("content-disposition", "attachment; filename=person.csv");
+			Response.Write(fileData.ToString());
+			Response.Flush();
+			Response.End();
+		}
+
+
+		// GET: ExportBadge
+		public void ExportBadge() {
+			var fileData = new ExportData().BuildData<Badge>();
+
+			Response.Clear();
+			Response.ContentType = "text/csv";
+			Response.AddHeader("content-disposition", "attachment; filename=badgebank.csv");
+			Response.Write(fileData.ToString());
+			Response.Flush();
+			Response.End();
+		}
+
+
+		// GET: ExportBadgeHistory
+		public void ExportBadgeHistory() {
+			var fileData = new ExportData().BuildData<BadgeHistory>();
+
+			Response.Clear();
+			Response.ContentType = "text/csv";
+			Response.AddHeader("content-disposition", "attachment; filename=badgehistory.csv");
+			Response.Write(fileData.ToString());
+			Response.Flush();
+			Response.End();
 		}
 
 		#endregion
