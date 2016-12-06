@@ -172,6 +172,8 @@
     <Content Include="Views\Admin\PersonDelete.cshtml" />
     <Content Include="Views\Admin\PersonCreate.cshtml" />
     <Content Include="Views\Tree\BadgeHistoryDetail.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
