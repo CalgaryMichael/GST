@@ -87,7 +87,7 @@ namespace GST_Program.Controllers {
 			b.Comment = comment;
 
             //replace '1' with the badge count for a person (or any positive number if you want a different position)
-            TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(1));
+            TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(1),0.0f);
 
             b.Pos_X = bPos.pos_x;
             b.Pos_Y = bPos.pos_y;

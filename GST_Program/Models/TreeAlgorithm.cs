@@ -46,7 +46,7 @@ namespace GST_Program.Models
         }
 
         //finds the position of a point based on the shape it's strewn across and the percentage across the shape
-        static point ShapePos(List<point> shape, float percent)
+        static point ShapePos(List<point> shape, float percent, float offset)
         {
             List<float> lengths = new List<float>();
             lengths.Add(0.0f);
@@ -60,7 +60,7 @@ namespace GST_Program.Models
             float place = percent * lengths[lengths.Count - 1];
             float percent2 = 0.0f;
             bool found = false;
-            point p1, p2, pointyo;
+            point p1, p2, newpt;
             for (int i = 0; i < lengths.Count - 1 && !found; i++)
             {
                 if (place <= lengths[i + 1])
@@ -70,17 +70,21 @@ namespace GST_Program.Models
                     p2 = shape[i + 1];
                     percent2 = (place - lengths[i]) / (lengths[i + 1] - lengths[i]);
 
-                    pointyo = new point((int)((p2.pos_x - p1.pos_x) * percent2) + p1.pos_x,
+                    newpt = new point((int)((p2.pos_x - p1.pos_x) * percent2) + p1.pos_x,
                         (int)((p2.pos_y - p1.pos_y) * percent2) + p1.pos_y,
                         Math.Atan2(p2.pos_y - p1.pos_y, p2.pos_x - p1.pos_x) * 180.0 / Math.PI);
-                    return pointyo;
+
+                    newpt.pos_x += (int)(offset * Math.Round((Math.Sin(newpt.angle / 180.0 * Math.PI)), 5) * -1);
+                    newpt.pos_y += (int)(offset * Math.Round((Math.Cos(newpt.angle / 180.0 * Math.PI)), 5));
+
+                    return newpt;
                 }
             }
             return null;
         }
 
         //Finds a leaf's position on the Tree Image
-        static public point TreePos(float percent)
+        static public point TreePos(float percent, float offset)
         {
 
             //The entire tree image, hard-coded
@@ -120,7 +124,7 @@ namespace GST_Program.Models
             treeShape.Add(new point(560, 388));
             treeShape.Add(new point(437, 373));
 
-            point treePoint = ShapePos(treeShape, percent);
+            point treePoint = ShapePos(treeShape, percent, offset);
 
             return treePoint;
         }
