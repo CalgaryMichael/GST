@@ -22,6 +22,9 @@
                         @Html.DisplayFor(modelp => p.Person_Type)
                     </td>
                     <td>
+                        @if (p.Person_Type == "Student") {
+                            @Html.ActionLink("Tree", $"../Tree/Index/{p.Person_ID}") <text> | </text>
+                        }
                         @Html.ActionLink("Details", "PersonDetail", new { id = p.Person_ID }) |
                         @Html.ActionLink("Edit", "PersonEdit", new { id = p.Person_ID }) |
                         @Html.ActionLink("Delete", "PersonDelete", new { id = p.Person_ID })

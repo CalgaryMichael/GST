@@ -1,18 +1,43 @@
-﻿
+﻿@model List<GST_Program.Domain.Models.BadgeHistory>
+@using Newtonsoft.Json
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tree";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 id="user">Index</h2>
+<h2 id="user">Tree</h2>
 
-@section inlineScript
-{
+<div class="container">
+    <canvas id="treeCanvas" width="800" height="700"></canvas>
+</div>
+
+
+@section scriptsIncludes {
+    <script src="~/Content/Vendor/jcanvas/jcanvas.min.js?Build=@Guid.NewGuid().ToString()"></script>
+    <script src="~/Content/Modules/TreeViewModule.js?Build=@Guid.NewGuid().ToString()"></script>
+}
+
+@section inlineScript {
     <script type="text/javascript">
         $(document).ready(function () {
-            window.IndexModule.init();
+            //window.PersonModule.init();
             document.getElementById('user').innerHTML = sessionStorage.profileName;
         });
+
+        var $treeCanvas = $('#treeCanvas');
+
+        @foreach (var b in Model) {
+            <text>
+                $treeCanvas.drawImage({
+                    source: '../../Content/TreeImages/Badge/leaf.png',
+                    name: 'b_@b.Transaction_Num',
+                    layer: true,
+                    x: @b.Pos_X, y: @b.Pos_Y,
+                    scale: 1
+                });
+                $treeCanvas.addLayerToGroup('b_@b.Transaction_Num', 'tree');
+            </text>
+        }
     </script>
 }
 

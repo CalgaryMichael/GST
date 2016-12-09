@@ -9,8 +9,10 @@ namespace GST_Program.Controllers {
 	public class TreeController : Controller {
 
 		// GET: Tree
-		public ActionResult Index() {
-			return View();
+		public ActionResult Index(string id) {
+			var service = new Database();
+			List<BadgeHistory> b = service.ReadAllBadgeReceivedByReceiver(id);
+			return View(b);
 		}
 
 
@@ -83,6 +85,13 @@ namespace GST_Program.Controllers {
 
 			b.Time_Stamp = DateTime.Now;
 			b.Comment = comment;
+
+            //replace '1' with the badge count for a person (or any positive number if you want a different position)
+            TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(1),0.0f);
+
+            b.Pos_X = bPos.pos_x;
+            b.Pos_Y = bPos.pos_y;
+            //rotation angle will be put here
 
 			if (ModelState.IsValid) {
 				service.Create(b);
