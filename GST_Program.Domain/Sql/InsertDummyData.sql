@@ -84,9 +84,9 @@ INSERT INTO [BadgeBank] VALUES
 
 
 INSERT INTO [BadgeHistory] VALUES
-	('201','10010','10010','11/4/16','I read')
-   ,('206','10014','10010','11/7/16','BEYOND!')
-   ,('514','10011','10010','11/12/16','Competency test');
+	('201','10010','10010','11/4/16','I read',100,100,0)
+   ,('206','10014','10010','11/7/16','BEYOND!',100,200,90)
+   ,('514','10011','10010','11/12/16','Competency test',100,300,270);
 
 
 INSERT INTO [CoreRelation] VALUES

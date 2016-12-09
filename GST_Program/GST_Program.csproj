@@ -114,7 +114,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\GridModule.js" />
+    <Content Include="Content\Modules\GridModule.js" />
+    <Content Include="Content\Modules\TreeViewModule.js" />
+    <Content Include="Content\TreeImages\Badge\apple.png" />
+    <Content Include="Content\TreeImages\Badge\leaf.png" />
+    <Content Include="Content\TreeImages\Tree\tree.jpg" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap.css" />
@@ -128,11 +132,12 @@
     <Content Include="Content\Vendor\datatables\js\datatables.min.js" />
     <Content Include="Content\Vendor\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\Vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Vendor\jcanvas\jcanvas.min.js" />
     <Content Include="Content\Vendor\jquery\jquery-2.2.4.min.js" />
     <Content Include="packages.config" />
-    <Content Include="Content\BadgeBankModule.js" />
-    <Content Include="Content\BadgeHistoryModule.js" />
-    <Content Include="Content\IndexModule.js" />
+    <Content Include="Content\Modules\BadgeBankModule.js" />
+    <Content Include="Content\Modules\BadgeHistoryModule.js" />
+    <Content Include="Content\Modules\PersonModule.js" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -207,8 +212,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GiveBadgeHandler.cs" />
     <Compile Include="Models\TestString.cs" />
     <Compile Include="Models\SystemContext.cs" />
+    <Compile Include="Models\TreeAlgorithm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

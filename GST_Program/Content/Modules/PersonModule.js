@@ -1,4 +1,4 @@
-﻿window.IndexModule = (function () {
+﻿window.IndexModule = (function ($) {
     function getStudent () {
         $.ajax({
             url: '/Admin/PersonType',

@@ -9,8 +9,10 @@ namespace GST_Program.Controllers {
 	public class TreeController : Controller {
 
 		// GET: Tree
-		public ActionResult Index() {
-			return View();
+		public ActionResult Index(string id) {
+			var service = new Database();
+			List<BadgeHistory> b = service.ReadAllBadgeReceivedByReceiver(id);
+			return View(b);
 		}
 
 
@@ -42,7 +44,6 @@ namespace GST_Program.Controllers {
 		public ActionResult GiveBadge() {
 			var service = new Database();
 			var bb = service.ReadAllBadge();
-
 			var pvm = service.ReadAllPerson();
 
 			ViewBag.Badges = bb;
@@ -57,23 +58,17 @@ namespace GST_Program.Controllers {
 		public ActionResult GiveBadge(FormCollection form) {
 			var service = new Database();
 			BadgeHistory b = new BadgeHistory();
-
-			var badge = form["badge"];
-			var giver = form["giver"];
+			
 			var receiver = form["receiver"];
 			var comment = form["Comment"];
-
-			// Test to see if Form Input for Badge is a Name or a Number
-			if (!TestString.IsAllDigits(badge)) {
-				b.Badge = service.ReadSingleBadgeByName(badge);
-				b.Badge_ID = Convert.ToString(b.Badge.Badge_ID);
-			}
-
-			// Test to see if Form Input for Giver is a Name or a Number
-			if (!TestString.IsAllDigits(giver)) {
-				b.Giver = service.ReadSinglePersonByName(giver);
-				b.Giver_ID = Convert.ToString(b.Giver.Person_ID);
-			}
+			
+			// Find Badge
+			b.Badge = service.ReadSingleBadge(form["badge"]);
+			b.Badge_ID = b.Badge.Badge_ID;
+			
+			// Find Person logged in
+			b.Giver = service.ReadSinglePersonByName(form["giver"]);
+			b.Giver_ID = Convert.ToString(b.Giver.Person_ID);
 
 			// Test to see if Form Input for Receiver is a Name or a Number
 			if (!TestString.IsAllDigits(receiver)) {
@@ -83,6 +78,16 @@ namespace GST_Program.Controllers {
 
 			b.Time_Stamp = DateTime.Now;
 			b.Comment = comment;
+
+			var count = service.ReadAllBadgeReceivedByReceiver(b.Student_ID).Count;
+
+			//replace '1' with the badge count for a person (or any positive number if you want a different position)
+			TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(count), -32.0f);
+
+			b.Pos_X = bPos.pos_x;
+			b.Pos_Y = bPos.pos_y;
+			b.Angle = bPos.angle;
+			//rotation angle will be put here
 
 			if (ModelState.IsValid) {
 				service.Create(b);

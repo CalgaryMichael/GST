@@ -61,7 +61,7 @@ namespace GST_Program.Domain.Services {
 		// Create new row in BadgeHistory
 		public void Create(BadgeHistory b) {
 			using (IDbConnection db = new SqlConnection(connection)) {
-				string sqlQuery = "INSERT INTO BadgeHistory VALUES(@Badge_ID, @Giver_ID, @Student_ID, @Time_Stamp, @Comment)";
+				string sqlQuery = "INSERT INTO BadgeHistory VALUES(@Badge_ID, @Giver_ID, @Student_ID, @Time_Stamp, @Comment, @Pos_X, @Pos_Y, @Angle)";
 				db.Execute(sqlQuery, b);
 			}
 		}
@@ -322,7 +322,7 @@ namespace GST_Program.Domain.Services {
 		// Update row in BadgeReceived
 		public void Update(BadgeHistory b) {
 			using (IDbConnection db = new SqlConnection(connection)) {
-				string sqlQuery = "UPDATE BadgeReceived SET Transaction_Num = @Transaction_Num, Badge_ID = @Badge_ID, Giver_ID = @Giver_ID, Student_ID = @Student_ID, Time_Stamp = @Time_Stamp, Comment = @Comment WHERE Transaction_Num = @Transaction_Num";
+				string sqlQuery = "UPDATE BadgeReceived SET Transaction_Num = @Transaction_Num, Badge_ID = @Badge_ID, Giver_ID = @Giver_ID, Student_ID = @Student_ID, Time_Stamp = @Time_Stamp, Comment = @Comment, Angle = @Angle WHERE Transaction_Num = @Transaction_Num";
 				db.Execute(sqlQuery, b);
 			}
 		}

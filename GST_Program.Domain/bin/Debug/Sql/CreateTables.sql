@@ -24,7 +24,10 @@ CREATE TABLE [BadgeHistory](
 	[Giver_ID]			int				REFERENCES Person([Person_ID]),
 	[Student_ID]		int				REFERENCES Person([Person_ID]),
 	[Time_Stamp]		DateTime,
-	[Comment]			varchar(50)
+	[Comment]			varchar(50),
+	[Pos_X]				int,
+	[Pos_Y]				int,
+	[Angle]				int
 );
 
 CREATE TABLE [CoreRelation](
