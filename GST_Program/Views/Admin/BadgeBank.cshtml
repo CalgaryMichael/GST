@@ -1,6 +1,7 @@
 ﻿@model List<GST_Program.Domain.Models.Badge>
 @{
     ViewBag.Title = "Badge Bank";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Badge Bank</h2>
@@ -34,7 +35,7 @@
 
 @section scriptsIncludes
 {
-    <script src="~/Content/BadgeBankModule.js?Build=@Guid.NewGuid().ToString()"></script>
+    <script src="~/Content/Modules/BadgeBankModule.js?Build=@Guid.NewGuid().ToString()"></script>
 }
 
 @section inlineScript

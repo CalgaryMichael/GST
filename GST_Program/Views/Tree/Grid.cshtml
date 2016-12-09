@@ -4,6 +4,7 @@
     ViewBag.Title = "GridView";
     Boolean isAchieved = false;
     DateTime badgeDT = new DateTime();
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
@@ -123,5 +124,5 @@
 
 
 @section scriptsIncludes {
-    <script src="~/Content/GridModule.js?Build=@Guid.NewGuid().ToString()"></script>
+    <script src="~/Content/Modules/GridModule.js?Build=@Guid.NewGuid().ToString()"></script>
 }

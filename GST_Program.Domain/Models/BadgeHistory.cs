@@ -8,6 +8,8 @@ namespace GST_Program.Domain.Models {
         public string Student_ID { get; set; }
         public DateTime Time_Stamp { get; set; }
         public string Comment { get; set; }
+        public int Pos_X { get; set; }
+        public int Pos_Y { get; set; }
 
         public Badge Badge { get; set; }
         public Person Giver { get; set; }
