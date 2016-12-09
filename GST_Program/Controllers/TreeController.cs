@@ -91,7 +91,7 @@ namespace GST_Program.Controllers {
 
 			if (ModelState.IsValid) {
 				service.Create(b);
-				return RedirectToAction($"Grid/{b.Student_ID}");
+				return RedirectToAction($"Index/{b.Student_ID}");
 			}
 
 			return View(b);

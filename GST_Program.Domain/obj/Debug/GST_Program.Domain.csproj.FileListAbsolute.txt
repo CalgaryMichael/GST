@@ -1,6 +1,5 @@
 C:\_Git\GST\GST_Program.Domain\bin\Debug\GST_Program.Domain.dll
 C:\_Git\GST\GST_Program.Domain\bin\Debug\GST_Program.Domain.pdb
-C:\_Git\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.csprojResolveAssemblyReference.cache
 C:\_Git\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.dll
 C:\_Git\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.pdb
 C:\_Git\GST\GST_Program.Domain\bin\Debug\Dapper.dll
