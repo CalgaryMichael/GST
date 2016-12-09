@@ -116,6 +116,8 @@
   <ItemGroup>
     <Content Include="Content\Modules\GridModule.js" />
     <Content Include="Content\Modules\TreeViewModule.js" />
+    <Content Include="Content\oc logo black.png" />
+    <Content Include="Content\oc logo no black.png" />
     <Content Include="Content\TreeImages\Badge\apple.png" />
     <Content Include="Content\TreeImages\Badge\leaf.png" />
     <Content Include="Content\TreeImages\Tree\tree.jpg" />
