@@ -15,4 +15,12 @@ $treeCanvas.drawImage({
     x: 440, y: 355,
     scale: 0.015
 });
+
+$treeCanvas.drawImage({
+    source: '../../Content/TreeImages/Badge/flower.png',
+    layer: true,
+    name: 'flower',
+    x: 500, y: 370,
+    scale: 0.6
+});
 $treeCanvas.addLayerToGroup('apple', 'tree');

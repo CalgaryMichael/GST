@@ -117,6 +117,7 @@
     <Content Include="Content\Modules\GridModule.js" />
     <Content Include="Content\Modules\TreeViewModule.js" />
     <Content Include="Content\TreeImages\Badge\apple.png" />
+    <Content Include="Content\TreeImages\Badge\flower.png" />
     <Content Include="Content\TreeImages\Badge\leaf.png" />
     <Content Include="Content\TreeImages\Tree\tree.jpg" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-theme.css" />

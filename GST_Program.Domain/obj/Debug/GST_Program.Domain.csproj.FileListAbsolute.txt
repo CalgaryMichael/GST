@@ -15,3 +15,4 @@ C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\bin\Debug\Sql\CreateTables.sq
 C:\Users\yuoru\Source\Repos\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.csprojResolveAssemblyReference.cache
 C:\_Git\GST\GST_Program.Domain\bin\Debug\Sql\CreateDatabase.sql
 C:\_Git\GST\GST_Program.Domain\bin\Debug\Sql\CreateTables.sql
+C:\_git\GST\GST_Program.Domain\obj\Debug\GST_Program.Domain.csprojResolveAssemblyReference.cache
