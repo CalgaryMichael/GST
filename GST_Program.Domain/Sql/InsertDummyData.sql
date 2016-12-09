@@ -1,6 +1,6 @@
 ﻿INSERT INTO [Person] VALUES
 	(10010,'Student',	'Rob Thompson',			'r.thompson@eagles.oc.edu',		'0')
-   ,(10011,'Student',	'Calgary Michael',		'seth.michael@eagles.oc.edu',	'0')
+   ,(10011,'Staff',	'Calgary Michael',		'seth.michael@eagles.oc.edu',	'1')
    ,(10012,'Faculty',	'Smith Kathy',			'ghi@example.com',				'1')
    ,(10013,'Student',	'Amos Parrish',			'amos.parrish@eagles.oc.edu',	'0')
    ,(10014,'Staff',		'Weston Vidaurri',		'weston.vidaurri@eagles.oc.edu','1')

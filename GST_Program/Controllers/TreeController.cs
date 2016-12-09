@@ -11,6 +11,8 @@ namespace GST_Program.Controllers {
 		// GET: Tree
 		public ActionResult Index(string id) {
 			var service = new Database();
+			var person = service.ReadSinglePerson(id);
+			ViewBag.Person = person;
 			List<BadgeHistory> b = service.ReadAllBadgeReceivedByReceiver(id);
 			return View(b);
 		}

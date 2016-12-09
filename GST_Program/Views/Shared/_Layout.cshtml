@@ -10,6 +10,12 @@
     @Styles.Render("~/Content/Site.css")
 
     @RenderSection("additionalCSS", false)
+
+    <script>
+        $(document).ready(function () {
+            var admin = sessionStorage.
+        });
+    </script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,6 +28,12 @@
                 </button>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                        @*<li id="adminLink">@Html.ActionLink("Person", "Index", "Admin")</li>
+                        <li id="adminLink">@Html.ActionLink("Badge Bank", "BadgeBank", "Admin")</li>
+                        <li id="adminLink">@Html.ActionLink("Badge History", "BadgeHistory", "Admin")</li>
+                        <li id="adminLink">@Html.ActionLink("Give Badge", "GiveBadge", "Tree")</li>
+                        <li id="adminLink">@Html.ActionLink("Grid View", "Grid/10010", "Tree")</li>*@
+
                         <li>@Html.ActionLink("Give Badge", "GiveBadge", "Tree")</li>
                         <li>@Html.ActionLink("Grid View", "Grid/10010", "Tree")</li>
                     </ul>
