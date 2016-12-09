@@ -8,7 +8,8 @@
    ,(10016,'Student',	'Brown James',			'stu@example.com',				'0')
    ,(10017,'Student',	'Williams George',		'vwx@example.com',				'0')
    ,(10018,'Student',	'Farriss Anne',			'yz@example.com',				'0')
-   ,(10019,'Faculty',	'Smith Olette',			'123@example.com',				'1');
+   ,(10019,'Faculty',	'Lane Wheeler',			'lane.wheeler@eagles.oc.edu',	'1')
+   ,(10020,'Faculty',	'Smith Olette',			'123@example.com',				'1');
 
 
 INSERT INTO [BadgeBank] VALUES

@@ -361,6 +361,41 @@ namespace GST_Program.Domain.Services {
 			}
 		}
 
-		#endregion
-	}
+        #endregion
+
+        #region Send Email
+        public void SendEmail(BadgeHistory b)
+        {
+
+            System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+            mail.To.Add(b.Receiver.Person_Email);
+            mail.From = new MailAddress("gstbadge@gmail.com", "GST BADGE", System.Text.Encoding.UTF8);
+            mail.Subject = "Badge Received";
+            mail.SubjectEncoding = System.Text.Encoding.UTF8;
+            mail.Body = ("<h1>" + b.Badge.Badge_Name + " Badge Received From: " + b.Giver.Person_Name + "</h1>" + "<p>Comment: " + b.Comment + "</p>");
+            mail.BodyEncoding = System.Text.Encoding.UTF8;
+            mail.IsBodyHtml = true;
+            mail.Priority = MailPriority.High;
+            SmtpClient client = new SmtpClient();
+            client.Credentials = new System.Net.NetworkCredential("gstbadge@gmail.com", "GSTBADGE0946382");
+            client.Port = 587;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+            try
+            {
+                client.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                Exception ex2 = ex;
+                string errorMessage = string.Empty;
+                while (ex2 != null)
+                {
+                    errorMessage += ex2.ToString();
+                    ex2 = ex2.InnerException;
+                }
+            }
+        }
+        #endregion
+    }
 }
