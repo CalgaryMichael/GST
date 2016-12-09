@@ -6,6 +6,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
 using GST_Program.Domain.Sql;
+using System.Net;
+using System.Net.Mail;
+using System.Web.UI;
+using System;
 
 namespace GST_Program.Domain.Services {
 	public class Database {
