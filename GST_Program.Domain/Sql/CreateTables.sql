@@ -26,8 +26,7 @@ CREATE TABLE [BadgeHistory](
 	[Time_Stamp]		DateTime,
 	[Comment]			varchar(50),
 	[Pos_X]				int,
-	[Pos_Y]				int,
-	[Angle]				int
+	[Pos_Y]				int
 );
 
 CREATE TABLE [CoreRelation](

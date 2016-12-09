@@ -10,7 +10,6 @@ namespace GST_Program.Domain.Models {
         public string Comment { get; set; }
 		public int Pos_X { get; set; }
 		public int Pos_Y { get; set; }
-		public int Angle { get; set; }
 
         public Badge Badge { get; set; }
         public Person Giver { get; set; }
