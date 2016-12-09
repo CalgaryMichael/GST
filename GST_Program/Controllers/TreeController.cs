@@ -44,6 +44,7 @@ namespace GST_Program.Controllers {
 		public ActionResult GiveBadge() {
 			var service = new Database();
 			var bb = service.ReadAllBadge();
+
 			var pvm = service.ReadAllPerson();
 
 			ViewBag.Badges = bb;
@@ -91,6 +92,7 @@ namespace GST_Program.Controllers {
 
 			if (ModelState.IsValid) {
 				service.Create(b);
+               			service.SendEmail(b);
 				return RedirectToAction($"Grid/{b.Student_ID}");
 			}
 
