@@ -12,7 +12,7 @@ namespace GST_Program.Models
         {
             public int pos_x;
             public int pos_y;
-            public double angle;
+            public int angle;
 
             public point(int posx, int posy)
             {
@@ -20,7 +20,7 @@ namespace GST_Program.Models
                 pos_y = posy;
                 angle = 0;
             }
-            public point(int posx, int posy, double angl)
+            public point(int posx, int posy, int angl)
             {
                 pos_x = posx;
                 pos_y = posy;
@@ -72,7 +72,7 @@ namespace GST_Program.Models
 
                     newpt = new point((int)((p2.pos_x - p1.pos_x) * percent2) + p1.pos_x,
                         (int)((p2.pos_y - p1.pos_y) * percent2) + p1.pos_y,
-                        Math.Atan2(p2.pos_y - p1.pos_y, p2.pos_x - p1.pos_x) * 180.0 / Math.PI);
+                        (int)Math.Round(Math.Atan2(p2.pos_y - p1.pos_y, p2.pos_x - p1.pos_x) * 180.0 / Math.PI, 0));
 
                     newpt.pos_x += (int)(offset * Math.Round((Math.Sin(newpt.angle / 180.0 * Math.PI)), 5) * -1);
                     newpt.pos_y += (int)(offset * Math.Round((Math.Cos(newpt.angle / 180.0 * Math.PI)), 5));

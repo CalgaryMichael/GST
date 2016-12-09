@@ -61,7 +61,7 @@ namespace GST_Program.Domain.Services {
 		// Create new row in BadgeHistory
 		public void Create(BadgeHistory b) {
 			using (IDbConnection db = new SqlConnection(connection)) {
-				string sqlQuery = "INSERT INTO BadgeHistory VALUES(@Badge_ID, @Giver_ID, @Student_ID, @Time_Stamp, @Comment, @Pos_X, @Pos_Y)";
+				string sqlQuery = "INSERT INTO BadgeHistory VALUES(@Badge_ID, @Giver_ID, @Student_ID, @Time_Stamp, @Comment, @Pos_X, @Pos_Y, @Angle)";
 				db.Execute(sqlQuery, b);
 			}
 		}

@@ -86,11 +86,14 @@ namespace GST_Program.Controllers {
 			b.Time_Stamp = DateTime.Now;
 			b.Comment = comment;
 
+			var count = service.ReadAllBadgeReceivedByReceiver(b.Student_ID).Count;
+
             //replace '1' with the badge count for a person (or any positive number if you want a different position)
-            TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(1),0.0f);
+            TreeAlgorithm.point bPos = TreeAlgorithm.TreePos(TreeAlgorithm.BinPercent(count),-32.0f);
 
             b.Pos_X = bPos.pos_x;
             b.Pos_Y = bPos.pos_y;
+			b.Angle = bPos.angle;
             //rotation angle will be put here
 
 			if (ModelState.IsValid) {
