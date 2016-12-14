@@ -16,20 +16,21 @@
         <h3>Core</h3>
     </div>
 
-    <div class="row">
+    @*<div class="row">*@
         <table class="table" id="coreTable">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Badge</th>
-                    <th>Time Stamp</th>
-                    <th>Image</th>
+                    <th width="33%">Badge</th>
+                    <th width="33%">Time Stamp</th>
+                    <th width="33%">Image</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var core in ViewBag.Core) {
                     <tr class="core">
-                        <td colspan="4">
+                        <td colspan="3">
+                            <br />
+                            <br />
                             <b>@core.CoreBadge.Badge_Name</b>
                         </td>
                     </tr>
@@ -46,9 +47,8 @@
 
                         if (isAchieved) {
                             <tr class="achieved">
-                                <td></td>
                                 <td>
-                                    @competency.Badge_Name
+                                    &nbsp;&nbsp;&nbsp;&nbsp;@competency.Badge_Name
                                 </td>
                                 <td>
                                     @badgeDT
@@ -58,10 +58,9 @@
                                 </td>
                             </tr>
                         } else {
-                            <tr class="unachieved">
-                                <td></td>
+                            <tr>
                                 <td>
-                                    @competency.Badge_Name
+                                    &nbsp;&nbsp;&nbsp;&nbsp;@competency.Badge_Name
                                 </td>
                                 <td></td>
                                 <td>
@@ -74,7 +73,7 @@
             </tbody>
 
         </table>
-    </div>
+    @*</div>*@
 
     <div class="row"><hr /></div>
 

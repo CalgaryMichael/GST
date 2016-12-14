@@ -76,7 +76,7 @@ INSERT INTO [BadgeBank] VALUES
    ,(515,'Diversity Awareness',						'?',																																												'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(516,'Multi-cultural Sensitivity',				'?',																																												'Competency','Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(601,'Active Faith',							'?',																																												'Core',		 'Faculty-Student',		'8-3-16',	'',			'',	'')
-   ,(602,'Foundatinoal Knowledge',					'?',																																												'Core',		 'Faculty-Student',		'8-3-16',	'',			'',	'')
+   ,(602,'Foundational Knowledge',					'?',																																												'Core',		 'Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(603,'Information Literacy',					'?',																																												'Core',		 'Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(604,'Structured Reasoning',					'?',																																												'Core',		 'Faculty-Student',		'8-3-16',	'',			'',	'')
    ,(605,'Critical and Creative Thinking',			'?',																																												'Core',		 'Faculty-Student',		'8-3-16',	'',			'',	'')
